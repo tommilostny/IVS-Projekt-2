@@ -1,0 +1,29 @@
+GUI, +-*/ faktoriál umocnění a odmocnění , ? prvočíslo , ?převod?
+1)Stanovené termíny 
+18.3 - Rozdělení úkolů
+24.3 - Inicializování gitu, gitpull , clone
+31.3 - Každý zpracuje svoje úkoly
+11.4 - Code review
+
+
+2)Přidělení úkolů (každý napíše nápovědu ke své funkci, komentář nad funkci, jedna funkce jeden gitpush)
+
+xrivol01 - prvočíslo, '/' 
+
+xmilos02 - GUI, faktoriál,'-'
+
+xpaulr01 - umocnění,'+'
+
+xponiz01 - odmocnění,'*'
+
+3)Komunikační kanály:
+
+Messenger pro domluvení termínu týmového hovoru.
+Microsoft Teams pro ostatní komunikaci včetně hovorů.
+
+4)Zvolený systém pro spávu verzí
+
+Git + GitHub
+
+Odkaz na repozitář:
+https://github.com/tommilostny/IVS-Projekt-2
