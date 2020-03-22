@@ -15,6 +15,8 @@ namespace Calculator
     {
         //Funkce z matematické knihovny voláme v událostech tlačítek
         MathClass math = new MathClass();
+        double num1 = 0, num2 = 0;
+        char operation = char.MinValue;
 
         public Form1()
         {
@@ -23,7 +25,36 @@ namespace Calculator
 
         private void buttonNumber_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "0")
+                textBox1.Text = string.Empty;
 
+            textBox1.Text += (sender as Button).Text;
+        }
+
+        private void buttonBackspace_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+
+            if (textBox1.Text == string.Empty)
+                textBox1.Text = "0";
+        }
+
+        private void buttonNeg_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = (-1 * Convert.ToDouble(textBox1.Text)).ToString();
+        }
+
+        private void buttonPoint_Click(object sender, EventArgs e)
+        {
+            if (!textBox1.Text.Contains(","))
+                textBox1.Text += ",";
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            num1 = num2 = 0;
+            operation = char.MinValue;
+            textBox1.Text = "0";
         }
     }
 }

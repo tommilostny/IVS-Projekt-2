@@ -79,6 +79,7 @@
             this.buttonNeg.TabIndex = 1;
             this.buttonNeg.Text = "+/-";
             this.buttonNeg.UseVisualStyleBackColor = true;
+            this.buttonNeg.Click += new System.EventHandler(this.buttonNeg_Click);
             // 
             // button0
             // 
@@ -102,6 +103,7 @@
             this.buttonPoint.TabIndex = 3;
             this.buttonPoint.Text = ",";
             this.buttonPoint.UseVisualStyleBackColor = true;
+            this.buttonPoint.Click += new System.EventHandler(this.buttonPoint_Click);
             // 
             // button2
             // 
@@ -295,6 +297,7 @@
             this.buttonClear.TabIndex = 19;
             this.buttonClear.Text = "C";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonFaktorial
             // 
@@ -317,22 +320,24 @@
             this.buttonBackspace.Size = new System.Drawing.Size(50, 50);
             this.buttonBackspace.TabIndex = 21;
             this.buttonBackspace.UseVisualStyleBackColor = true;
+            this.buttonBackspace.Click += new System.EventHandler(this.buttonBackspace_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nápovědaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(300, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(300, 28);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // nápovědaToolStripMenuItem
             // 
             this.nápovědaToolStripMenuItem.Name = "nápovědaToolStripMenuItem";
-            this.nápovědaToolStripMenuItem.Size = new System.Drawing.Size(92, 26);
+            this.nápovědaToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
             this.nápovědaToolStripMenuItem.Text = "Nápověda";
             // 
             // textBox1
@@ -377,8 +382,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "Kalkulačka";
