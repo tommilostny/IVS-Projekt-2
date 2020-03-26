@@ -14,7 +14,6 @@ namespace Calculator
     public partial class Form1 : Form
     {
         //Funkce z matematické knihovny voláme v událostech tlačítek
-        MathClass math = new MathClass();
         double num1 = 0, num2 = 0;
         char operation = char.MinValue;
 

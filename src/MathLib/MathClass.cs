@@ -2,13 +2,11 @@
 
 namespace MathLib
 {
-    public class MathClass
+    public static class MathClass
     {
-        public MathClass() { }
-
         //Zde doplňte vaše matematické funkce
         //Return first prime number after given number.
-        public long FirstPrimeNumberAfterNumber(long number){
+        public static long FirstPrimeNumberAfterNumber(long number){
             if(number < 1) number = 1;  //Negative numbers are not prime numbers
             if(number % 2 == 0) number--;   // Make number odd
             bool finded = false;  
