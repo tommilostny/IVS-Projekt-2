@@ -49,6 +49,13 @@ namespace Calculator
                 textBox1.Text += ",";
         }
 
+        private void buttonPrime_Click(object sender, EventArgs e)
+        {
+            long number=Convert.ToInt64(textBox1.Text);
+            number = MathClass.FirstPrimeNumberAfterNumber(number);
+            textBox1.Text = number.ToString();
+        }
+
         private void buttonClear_Click(object sender, EventArgs e)
         {
             num1 = num2 = 0;

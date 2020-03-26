@@ -254,6 +254,7 @@
             this.buttonPrime.TabIndex = 15;
             this.buttonPrime.Text = "Prvočíslo";
             this.buttonPrime.UseVisualStyleBackColor = true;
+            this.buttonPrime.Click += new System.EventHandler(this.buttonPrime_Click);
             // 
             // buttonEquals
             // 
