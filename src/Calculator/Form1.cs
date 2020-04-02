@@ -64,7 +64,11 @@ namespace Calculator
             }
             catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("Číslo pro výpočet faktoriálu musí být větší než 0.");
+                MessageBox.Show("Faktoriál lze počítat pouze pro čísla větší než 0.", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Faktoriál lze počítat pouze pro celá čísla.", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
