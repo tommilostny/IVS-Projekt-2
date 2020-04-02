@@ -58,7 +58,14 @@ namespace Calculator
 
         private void buttonFaktorial_Click(object sender, EventArgs e)
         {
-            textBox1.Text = MathClass.Factorial(Convert.ToInt64(textBox1.Text)).ToString();
+            try
+            {
+                textBox1.Text = MathClass.Factorial(Convert.ToInt64(textBox1.Text)).ToString();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Číslo pro výpočet faktoriálu musí být větší než 0.");
+            }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
