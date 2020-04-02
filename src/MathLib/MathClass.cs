@@ -27,5 +27,30 @@ namespace MathLib
             }
             return number;    
         }
+
+        /// <summary>
+        /// Function to calculate the factorial of a number.
+        /// </summary>
+        /// <remarks>Autor: Tomáš Milostný (xmilos02)</remarks>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// Thrown if number is out of range 0+
+        /// </exception>
+        /// <param name="number">Number to calculate factorial from.</param>
+        /// <returns>Calculated factorial.</returns>
+        public static long Factorial(long number)
+        {
+            if (number < 0)
+                throw new ArgumentOutOfRangeException();
+
+            if (number <= 1)
+                return 1;
+
+            long result = 2;
+            for (int i = 3; i <= number; i++)
+            {
+                result *= i;
+            }
+            return result;
+        }
     }
 }
