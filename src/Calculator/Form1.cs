@@ -56,6 +56,11 @@ namespace Calculator
             textBox1.Text = number.ToString();
         }
 
+        private void buttonFaktorial_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = MathClass.Factorial(Convert.ToInt64(textBox1.Text)).ToString();
+        }
+
         private void buttonClear_Click(object sender, EventArgs e)
         {
             num1 = num2 = 0;

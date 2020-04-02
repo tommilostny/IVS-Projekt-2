@@ -310,6 +310,7 @@
             this.buttonFaktorial.TabIndex = 20;
             this.buttonFaktorial.Text = "n!";
             this.buttonFaktorial.UseVisualStyleBackColor = true;
+            this.buttonFaktorial.Click += new System.EventHandler(this.buttonFaktorial_Click);
             // 
             // buttonBackspace
             // 
