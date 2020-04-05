@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MathLib;
+using System;
 
 namespace MathLibraryTests
 {
@@ -26,5 +27,20 @@ namespace MathLibraryTests
             Assert.Equals(149, MathClass.FirstPrimeNumberAfterNumber(141));
             Assert.Equals(149, MathClass.FirstPrimeNumberAfterNumber(144));
         }
+        [TestMethod]
+        public void DivisionTest()
+        {
+            Assert.Equals(1 , MathClass.Divide(2, 2));
+            Assert.Equals(0.5, MathClass.Divide(2, 4));
+            Assert.Equals(-2, MathClass.Divide(2, -1));
+            Assert.Equals(-1, MathClass.Divide(2, -2));
+            Assert.Equals(2, MathClass.Divide(-6, -3));
+
+            //Must throw an expetion.
+            Assert.ThrowsException<DivideByZeroException>(() => MathClass.Divide(1, 0));
+            Assert.ThrowsException<DivideByZeroException>(() => MathClass.Divide(1, 0));
+
+        }
+
     }
 }

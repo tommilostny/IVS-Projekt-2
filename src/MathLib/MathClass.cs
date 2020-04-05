@@ -27,5 +27,11 @@ namespace MathLib
             }
             return number;    
         }
+        // Return division of 2 number, num1/num2, if num 2 is 0 return 0
+        public static double Divide(double num1, double num2)
+        {
+
+            return 0;
+        }
     }
 }
