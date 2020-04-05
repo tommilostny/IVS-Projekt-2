@@ -43,4 +43,19 @@ namespace MathLibraryTests
                 Assert.AreEqual(results[i], MathClass.Factorial(numbers[i]));
         }
     }
+
+    [TestClass]
+    public class BasicArithmetic_UnitTest
+    {
+        [TestMethod]
+        public void Subtract_Test()
+        {
+            Assert.AreEqual(7, MathClass.Subract(10, 3)); //10-3=7
+
+            for (int i = -23; i <= 23; i++)
+                Assert.AreEqual(0, MathClass.Subract(i, i));
+
+            Assert.AreEqual(10, MathClass.Subract(5, -5)); //5 - -5 = 5 + 5 = 10 
+        }
+    }
 }
