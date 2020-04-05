@@ -64,5 +64,42 @@ namespace MathLib
         {
             return num1 - num2;
         }
+
+        /// <summary>
+        /// Function to calculate the multiplication.
+        /// </summary>
+        /// <remarks>Autor: Daniel Ponížil (xponiz01)</remarks>
+        /// <param name="num1">First number for multiplication.</param>
+        /// <param name="num2">Second number for multiplication.</param>
+        /// <returns>Calculated multiplication.</returns>
+        public static double Mul(double num1, double num2)
+        {
+            return num1 * num2;
+        }
+
+        /// <summary>
+        /// Function to calculate the radical.
+        /// </summary>
+        /// <remarks>Autor: Daniel Ponížil (xponiz01)</remarks>
+        /// <param name="num1">Index (degree) of the root.</param>
+        /// <param name="num2">Root number.</param>
+        /// <returns>Calculated radical.</returns>
+        public static double Sqrt(double num1, double num2)
+        {
+            if (num2 < 0)
+                throw new ArgumentOutOfRangeException();
+
+            double result = 0;
+            if (num2 == 0)
+                return result;
+
+            if (num1 < 0)
+                throw new ArgumentException();
+            if (num1 == 0)
+                num1 = 2;
+
+            result = Math.Pow(num2, 1.0 / num1);
+            return result;
+        }        
     }
 }

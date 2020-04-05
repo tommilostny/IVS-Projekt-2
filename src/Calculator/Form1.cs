@@ -105,7 +105,7 @@ namespace Calculator
                 case operations.ADD:
                     break;
                 case operations.SUB:
-                    //result = MathClass.Subract(num1.value, num2.value);
+                    result = MathClass.Subract(num1.value, num2.value);
                     break;
                 case operations.MUL:
                     break;
