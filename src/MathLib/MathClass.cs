@@ -52,5 +52,17 @@ namespace MathLib
             }
             return result;
         }
+
+        /// <summary>
+        /// Subtract num2 from num1.
+        /// </summary>
+        /// <remarks>Author: Tomáš Milostný (xmilos02)</remarks>
+        /// <param name="num1">Number to subtract from.</param>
+        /// <param name="num2">Subtracted number.</param>
+        /// <returns>Number 1 minus Number 2.</returns>
+        public static double Subract(double num1, double num2)
+        {
+            return num1 - num2;
+        }
     }
 }
