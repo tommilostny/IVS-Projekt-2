@@ -7,19 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using MathLib;
 
 namespace Calculator
 {
     public partial class Form1 : Form
     {
-        //Funkce z matematické knihovny voláme v událostech tlačítek
-        double num1 = 0, num2 = 0;
-        char operation = char.MinValue;
+        enum operations { NONE, ADD = '+', SUB = '-', MUL = '*', DIV = '/', POW = '^', SQRT = '√' };
+        struct number
+        {
+            public double value;
+            public bool is_set;
+        }
+
+        operations curr_operation;
+        number num1, num2;
 
         public Form1()
         {
             InitializeComponent();
+            Clear();
         }
 
         private void buttonNumber_Click(object sender, EventArgs e)
@@ -72,11 +80,75 @@ namespace Calculator
             }
         }
 
+        private void Clear()
+        {
+            num1.value = num2.value = 0;
+            num1.is_set = num2.is_set = false;
+            curr_operation = operations.NONE;
+        }
+
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            num1 = num2 = 0;
-            operation = char.MinValue;
             textBox1.Text = "0";
+            label1.Text = string.Empty;
+            Clear();   
+        }
+
+        private void Equals()
+        {
+            num2.value = Convert.ToDouble(textBox1.Text);
+
+            double result = 0;
+
+            switch (curr_operation)
+            {
+                case operations.ADD:
+                    break;
+                case operations.SUB:
+                    //result = MathClass.Subract(num1.value, num2.value);
+                    break;
+                case operations.MUL:
+                    break;
+                case operations.DIV:
+                    break;
+                case operations.POW:
+                    break;
+                case operations.SQRT:
+                    break;
+            }
+            textBox1.Text = Convert.ToDouble(result).ToString();
+            label1.Text = num1.value.ToString() + ' ' + (char)curr_operation + ' ' + num2.value.ToString() + " =";
+
+            curr_operation = operations.NONE;
+            num1.value = result;
+        }
+
+        private void buttonTwoNumbersOperation_Click(object sender, EventArgs e)
+        {
+            if (curr_operation == operations.NONE)
+            {
+                num1.value = Convert.ToDouble(textBox1.Text);
+                if (!num1.is_set)
+                    num1.is_set = true;
+
+                switch ((sender as Button).Text)
+                {
+                    case "-":   curr_operation = operations.SUB;    break;
+                    case "+":   curr_operation = operations.ADD;    break;
+                    case "*":   curr_operation = operations.MUL;    break;
+                    case "/":   curr_operation = operations.DIV;    break;
+                    case "x^y": curr_operation = operations.POW;    break;
+                    case "√":   curr_operation = operations.SQRT;   break;
+                }
+
+                textBox1.Text = "0";
+                label1.Text = num1.value.ToString() + ' ' + (char)curr_operation;
+            }
+        }
+
+        private void buttonEquals_Click(object sender, EventArgs e)
+        {
+            Equals();
         }
     }
 }
