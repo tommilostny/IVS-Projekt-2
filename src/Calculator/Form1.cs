@@ -15,11 +15,14 @@ namespace Calculator
     {
         //Funkce z matematické knihovny voláme v událostech tlačítek
         double num1 = 0, num2 = 0;
-        char operation = char.MinValue;
+
+        enum Operations {  Add, Subtract , Multiply , Divide , Power , None }
+        Operations currentOperation;
 
         public Form1()
         {
             InitializeComponent();
+            currentOperation = Operations.None;
         }
 
         private void buttonNumber_Click(object sender, EventArgs e)
@@ -40,7 +43,7 @@ namespace Calculator
 
         private void buttonNeg_Click(object sender, EventArgs e)
         {
-            textBox1.Text = (-1 * Convert.ToDouble(textBox1.Text)).ToString();
+            textBox1.Text = (-1 * Convert.ToDouble(textBox1.Text)).ToString(); //  Co takhle využít naši knihovnu na násobení ? 
         }
 
         private void buttonPoint_Click(object sender, EventArgs e)
@@ -75,7 +78,7 @@ namespace Calculator
         private void buttonClear_Click(object sender, EventArgs e)
         {
             num1 = num2 = 0;
-            operation = char.MinValue;
+            currentOperation = Operations.None; 
             textBox1.Text = "0";
         }
     }
