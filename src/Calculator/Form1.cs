@@ -224,7 +224,7 @@ namespace Calculator
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             //Remove leading zero character
-            if (textBox1.Text.Length > 1 && textBox1.Text.Contains("0") && textBox1.Text[0] == '0')
+            if (textBox1.Text.Length > 1 && textBox1.Text.Contains("0") && textBox1.Text[0] == '0' && textBox1.Text[1] != ',')
             {
                 textBox1.Text = textBox1.Text.Remove(0, 1);
                 textBox1.SelectionStart = textBox1.Text.Length;

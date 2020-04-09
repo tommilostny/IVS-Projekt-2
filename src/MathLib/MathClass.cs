@@ -63,14 +63,14 @@ namespace MathLib
         /// <returns>Calculated factorial.</returns>
         public static double Factorial(double number)
         {
-            if (Math.Floor(number) != number)
-                throw new FormatException("Faktoriál lze počítat pouze pro celá čísla.");
-
             if (number < 0)
                 throw new ArgumentException("Faktoriál lze počítat pouze větší než 0.");
 
             if (number <= 1)
                 return 1;
+
+            if (Math.Floor(number) != number)
+                throw new FormatException("Faktoriál lze počítat pouze pro celá čísla.");
 
             double result = 2;
             for (double i = 3; i <= number; i++)
