@@ -166,6 +166,35 @@ namespace Calculator
             textBox1.Text = "0";
         }
 
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {         
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '-' || char.IsControl(e.KeyChar)) // Allowing digits
+            {
+                // Allowing decimal numbers
+                if (textBox1.Text.Contains(",") && e.KeyChar == ',')   // Max one ',' can be in number
+                {
+                    e.Handled = true;
+                }
+                // Allowing negative numbers
+                if (!textBox1.Text.Contains("-") && e.KeyChar == '-')   // Max one '-' can be in number
+                {
+                    textBox1.Text = "-" + textBox1.Text;
+                    textBox1.SelectionStart = textBox1.Text.Length; // Set cursor to end of textbox
+                    e.Handled = true;
+                }
+                if (e.KeyChar == 13)
+                {
+                    // ENTER 
+                    // Maybe call Calculate function? 
+                    e.Handled = true;
+                }
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             if (curr_operation != operations.NONE)

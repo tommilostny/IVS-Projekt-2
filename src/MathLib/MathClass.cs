@@ -27,11 +27,20 @@ namespace MathLib
             }
             return number;    
         }
-        // Return division of 2 number, num1/num2, if num 2 is 0 exception is throwned
-        public static double Divide(double num1, double num2)
+        /// <summary>
+        /// Function to calculate the division of two number.
+        /// </summary>
+        /// <remarks>Autor: Michal Rivola (xrivol01)</remarks>
+        /// <exception cref="System.DivideByZeroException">
+        /// Thrown if second number is 0
+        /// </exception>
+        /// <param name="number1">Dividend</param>
+        /// <param name="number2">Divisor</param>
+        /// <returns>Calculated division.</returns>
+        public static double Divide(double number1, double number2)
         {
-            if (num2 == 0) throw new DivideByZeroException();
-            return num1 / num2;
+            if (number2 == 0) throw new DivideByZeroException();
+            return number1 / number2;
         }
 
         /// <summary>
