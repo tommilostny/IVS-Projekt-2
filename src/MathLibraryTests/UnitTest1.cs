@@ -41,6 +41,13 @@ namespace MathLibraryTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(FormatException))]
+        public void FactorialDecimals_Test()
+        {
+            MathClass.Factorial(5.5);
+        }
+
+        [TestMethod]
         public void FactorialResults_Test()
         {
             long[] numbers = { 0, 1, 2, 3, 4, 5, 6, 11, 20 };

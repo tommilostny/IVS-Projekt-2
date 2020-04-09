@@ -81,11 +81,9 @@ namespace Calculator
         {
             try
             {
-                textBox1.Text = MathClass.Factorial(Convert.ToInt64(textBox1.Text)).ToString();
-            }
-            catch (FormatException)
-            {
-                Show_ErrorMessage("Faktoriál lze počítat pouze pro celá čísla.");
+                double f_num = Convert.ToDouble(textBox1.Text);
+                textBox1.Text = MathClass.Factorial(f_num).ToString();
+                label1.Text = $"fact({f_num}) =";
             }
             catch (Exception exc)
             {

@@ -56,24 +56,27 @@ namespace MathLib
         /// Function to calculate the factorial of a number.
         /// </summary>
         /// <remarks>Autor: Tomáš Milostný (xmilos02)</remarks>
-        /// <exception cref="System.ArgumentOutOfRangeException">
-        /// Thrown if number is out of range 0+
-        /// </exception>
+        /// <exception cref="ArgumentException"> Thrown if number is out of range 0+ </exception>
+        /// <exception cref="FormatException"> Thrown if number is not integral type. </exception>
+        /// <exception cref="OverflowException"> Thrown if the input number is too big for factorial calculation. </exception>
         /// <param name="number">Number to calculate factorial from.</param>
         /// <returns>Calculated factorial.</returns>
-        public static long Factorial(long number)
+        public static double Factorial(double number)
         {
+            if (Math.Floor(number) != number)
+                throw new FormatException("Faktoriál lze počítat pouze pro celá čísla.");
+
             if (number < 0)
                 throw new ArgumentException("Faktoriál lze počítat pouze větší než 0.");
 
             if (number <= 1)
                 return 1;
 
-            long result = 2;
-            for (long i = 3; i <= number; i++)
+            double result = 2;
+            for (double i = 3; i <= number; i++)
             {
                 result *= i;
-                if (result < 2)
+                if (double.IsInfinity(result))
                     throw new OverflowException("Příliš vysoké číslo pro faktoriál.");
             }
             return result;
