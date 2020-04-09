@@ -103,38 +103,45 @@ namespace Calculator
             Clear();   
         }
 
-        private void Equals()
+        private void Calculate()
         {
             num2 = Convert.ToDouble(textBox1.Text);
-
             double result = 0;
 
-            switch (curr_operation)
+            try
             {
-                case operations.ADD:
-                    //TODO: Insert add method here
-                    break;
-                case operations.SUB:
-                    result = MathClass.Subract(num1, num2);
-                    break;
-                case operations.MUL:
-                    //TODO: Insert multiplication method here
-                    break;
-                case operations.DIV:
-                    //TODO: Insert division method here
-                    break;
-                case operations.POW:
-                    //TODO: Insert power method here
-                    break;
-                case operations.SQRT:
-                    //TODO: Insert square root method here
-                    break;
-            }
-            textBox1.Text = Convert.ToDouble(result).ToString();
-            label1.Text = num1.ToString() + ' ' + (char)curr_operation + ' ' + num2.ToString() + " =";
+                switch (curr_operation)
+                {
+                    case operations.ADD:
+                        //TODO: Insert add method here
+                        break;
+                    case operations.SUB:
+                        result = MathClass.Subract(num1, num2);
+                        break;
+                    case operations.MUL:
+                        //TODO: Insert multiplication method here
+                        break;
+                    case operations.DIV:
+                        result = MathClass.Divide(num1, num2);
+                        break;
+                    case operations.POW:
+                        //TODO: Insert power method here
+                        break;
+                    case operations.SQRT:
+                        //TODO: Insert square root method here
+                        break;
+                }
+                textBox1.Text = Convert.ToDouble(result).ToString();
+                label1.Text = num1.ToString() + ' ' + (char)curr_operation + ' ' + num2.ToString() + " =";
 
-            curr_operation = operations.NONE;
-            num1 = result;
+                curr_operation = operations.NONE;
+                num1 = result;
+            }
+            catch (DivideByZeroException)
+            {
+                MessageBox.Show("Nelze dělit nulou!", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Clear();
+            }
         }
 
         private void buttonTwoNumbersOperation_Click(object sender, EventArgs e)
@@ -162,7 +169,7 @@ namespace Calculator
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             if (curr_operation != operations.NONE)
-                Equals();
+                Calculate();
         }
     }
 }
