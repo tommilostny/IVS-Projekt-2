@@ -357,7 +357,7 @@
             // nápovědaToolStripMenuItem
             // 
             this.nápovědaToolStripMenuItem.Name = "nápovědaToolStripMenuItem";
-            this.nápovědaToolStripMenuItem.Size = new System.Drawing.Size(92, 26);
+            this.nápovědaToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
             this.nápovědaToolStripMenuItem.Text = "Nápověda";
             // 
             // textBox1
@@ -369,14 +369,17 @@
             this.textBox1.TabIndex = 23;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox1.WordWrap = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.label1.Location = new System.Drawing.Point(14, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 23);
+            this.label1.Size = new System.Drawing.Size(0, 25);
             this.label1.TabIndex = 24;
             // 
             // Form1

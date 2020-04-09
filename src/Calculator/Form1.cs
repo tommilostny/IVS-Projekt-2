@@ -23,6 +23,10 @@ namespace Calculator
         public Form1()
         {
             InitializeComponent();
+            ActiveControl = textBox1;
+            textBox1.SelectAll();
+            textBox1.SelectionLength = 0;
+            textBox1.SelectionStart++;
         }
 
         private void buttonNumber_Click(object sender, EventArgs e)
@@ -105,53 +109,60 @@ namespace Calculator
 
         private void Calculate()
         {
-            num2 = Convert.ToDouble(textBox1.Text);
-            double result = 0;
-
-            try
+            if (curr_operation != operations.NONE)
             {
-                switch (curr_operation)
+                num2 = Convert.ToDouble(textBox1.Text);
+                double result = 0;
+
+                try //calculate currently set operation
                 {
-                    case operations.ADD:
-                        //TODO: Insert add method here
-                        break;
-                    case operations.SUB:
-                        result = MathClass.Subract(num1, num2);
-                        break;
-                    case operations.MUL:
-                        //TODO: Insert multiplication method here
-                        break;
-                    case operations.DIV:
-                        result = MathClass.Divide(num1, num2);
-                        break;
-                    case operations.POW:
-                        //TODO: Insert power method here
-                        break;
-                    case operations.SQRT:
-                        //TODO: Insert square root method here
-                        break;
-                }
-                textBox1.Text = Convert.ToDouble(result).ToString();
-                label1.Text = num1.ToString() + ' ' + (char)curr_operation + ' ' + num2.ToString() + " =";
+                    switch (curr_operation)
+                    {
+                        case operations.ADD:
+                            //TODO: Insert add method here
+                            break;
+                        case operations.SUB:
+                            result = MathClass.Subract(num1, num2);
+                            break;
+                        case operations.MUL:
+                            //TODO: Insert multiplication method here
+                            break;
+                        case operations.DIV:
+                            result = MathClass.Divide(num1, num2);
+                            break;
+                        case operations.POW:
+                            //TODO: Insert power method here
+                            break;
+                        case operations.SQRT:
+                            //TODO: Insert square root method here
+                            break;
+                    }
+                    textBox1.Text = Convert.ToDouble(result).ToString();
+                    label1.Text = num1.ToString() + ' ' + (char)curr_operation + ' ' + num2.ToString() + " =";
 
-                curr_operation = operations.NONE;
-                num1 = result;
-            }
-            catch (DivideByZeroException)
-            {
-                MessageBox.Show("Nelze dělit nulou!", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Clear();
+                    curr_operation = operations.NONE;
+                    num1 = result;
+                }
+                catch (DivideByZeroException)
+                {
+                    MessageBox.Show("Nelze dělit nulou!", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Clear();
+                }
             }
         }
 
         private void buttonTwoNumbersOperation_Click(object sender, EventArgs e)
-        {
+        { 
             if (!num1_is_set)
             {
                 num1 = Convert.ToDouble(textBox1.Text);
                 num1_is_set = true;
             }
+            //calculate previously set operation
+            else if (curr_operation != operations.NONE)
+                Calculate();
 
+            //set a new operation based on sender button
             switch ((sender as Button).Text)
             {
                 case "-": curr_operation = operations.SUB; break;
@@ -161,7 +172,6 @@ namespace Calculator
                 case "x^y": curr_operation = operations.POW; break;
                 case "√": curr_operation = operations.SQRT; break;
             }
-
             label1.Text = num1.ToString() + ' ' + (char)curr_operation;
             textBox1.Text = "0";
         }
@@ -170,22 +180,33 @@ namespace Calculator
         {         
             if (char.IsDigit(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '-' || char.IsControl(e.KeyChar)) // Allowing digits
             {
+                //Unset calculation label and num1 after previous calculation
+                if (label1.Text.Contains("="))
+                {
+                    label1.Text = string.Empty;
+                    num1_is_set = false;
+                }
+
                 // Allowing decimal numbers
                 if (textBox1.Text.Contains(",") && e.KeyChar == ',')   // Max one ',' can be in number
                 {
                     e.Handled = true;
                 }
                 // Allowing negative numbers
-                if (!textBox1.Text.Contains("-") && e.KeyChar == '-')   // Max one '-' can be in number
+                if (e.KeyChar == '-')
                 {
-                    textBox1.Text = "-" + textBox1.Text;
-                    textBox1.SelectionStart = textBox1.Text.Length; // Set cursor to end of textbox
+                    // Max one '-' can be in number, Cannot be negative 0
+                    if (!textBox1.Text.Contains("-") && Convert.ToDouble(textBox1.Text) != 0)
+                    {
+                        textBox1.Text = "-" + textBox1.Text;
+                        textBox1.SelectionStart = textBox1.Text.Length; // Set cursor to end of textbox
+                    }
                     e.Handled = true;
                 }
+                //ENTER key like "buttonEquals"
                 if (e.KeyChar == 13)
                 {
-                    // ENTER 
-                    // Maybe call Calculate function? 
+                    Calculate();
                     e.Handled = true;
                 }
             }
@@ -197,8 +218,24 @@ namespace Calculator
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
-            if (curr_operation != operations.NONE)
-                Calculate();
+            Calculate();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //Set empty or just negative textbox to 0
+            if (textBox1.Text == string.Empty || textBox1.Text == "-")
+            {
+                textBox1.Text = "0";
+                textBox1.SelectionStart = textBox1.Text.Length;
+            }
+
+            //Remove leading zero character
+            else if (textBox1.Text.Length > 1 && textBox1.Text.Contains("0") && textBox1.Text[0] == '0')
+            {
+                textBox1.Text = textBox1.Text.Remove(0, 1);
+                textBox1.SelectionStart = textBox1.Text.Length;
+            }
         }
     }
 }
