@@ -87,9 +87,9 @@ namespace Calculator
             {
                 Show_ErrorMessage("Faktoriál lze počítat pouze pro celá čísla.");
             }
-            catch (ArgumentOutOfRangeException)
+            catch (Exception exc)
             {
-                Show_ErrorMessage("Faktoriál lze počítat pouze pro celá čísla.");
+                Show_ErrorMessage(exc.Message);
             }
         }
 

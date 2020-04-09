@@ -64,15 +64,17 @@ namespace MathLib
         public static long Factorial(long number)
         {
             if (number < 0)
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentException("Faktoriál lze počítat pouze větší než 0.");
 
             if (number <= 1)
                 return 1;
 
             long result = 2;
-            for (int i = 3; i <= number; i++)
+            for (long i = 3; i <= number; i++)
             {
                 result *= i;
+                if (result < 2)
+                    throw new OverflowException("Příliš vysoké číslo pro faktoriál.");
             }
             return result;
         }
