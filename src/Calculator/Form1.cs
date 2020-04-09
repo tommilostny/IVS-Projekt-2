@@ -87,9 +87,9 @@ namespace Calculator
             {
                 Show_ErrorMessage("Faktoriál lze počítat pouze pro celá čísla.");
             }
-            catch (Exception exception)
+            catch (ArgumentOutOfRangeException)
             {
-                Show_ErrorMessage(exception.Message);
+                Show_ErrorMessage("Faktoriál lze počítat pouze pro celá čísla.");
             }
         }
 
@@ -151,7 +151,10 @@ namespace Calculator
         }
 
         private void buttonTwoNumbersOperation_Click(object sender, EventArgs e)
-        { 
+        {
+            if (textBox1.Text == string.Empty || textBox1.Text == "-")
+                textBox1.Text = "0";
+
             if (!num1_is_set)
             {
                 num1 = Convert.ToDouble(textBox1.Text);
@@ -195,7 +198,7 @@ namespace Calculator
                 if (e.KeyChar == '-')
                 {
                     // Max one '-' can be in number, Cannot be negative 0
-                    if (!textBox1.Text.Contains("-") && Convert.ToDouble(textBox1.Text) != 0)
+                    if (!textBox1.Text.Contains("-"))
                     {
                         textBox1.Text = "-" + textBox1.Text;
                         textBox1.SelectionStart = textBox1.Text.Length; // Set cursor to end of textbox
@@ -222,15 +225,8 @@ namespace Calculator
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            //Set empty or just negative textbox to 0
-            if (textBox1.Text == string.Empty || textBox1.Text == "-")
-            {
-                textBox1.Text = "0";
-                textBox1.SelectionStart = textBox1.Text.Length;
-            }
-
             //Remove leading zero character
-            else if (textBox1.Text.Length > 1 && textBox1.Text.Contains("0") && textBox1.Text[0] == '0')
+            if (textBox1.Text.Length > 1 && textBox1.Text.Contains("0") && textBox1.Text[0] == '0')
             {
                 textBox1.Text = textBox1.Text.Remove(0, 1);
                 textBox1.SelectionStart = textBox1.Text.Length;
