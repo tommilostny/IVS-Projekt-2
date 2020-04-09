@@ -83,13 +83,9 @@ namespace Calculator
             {
                 textBox1.Text = MathClass.Factorial(Convert.ToInt64(textBox1.Text)).ToString();
             }
-            catch (ArgumentOutOfRangeException)
+            catch (Exception exception)
             {
-                MessageBox.Show("Faktoriál lze počítat pouze pro čísla větší než 0.", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Faktoriál lze počítat pouze pro celá čísla.", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label1.Text = exception.Message;
             }
         }
 
@@ -145,7 +141,7 @@ namespace Calculator
                 }
                 catch (DivideByZeroException)
                 {
-                    MessageBox.Show("Nelze dělit nulou!", "Chyba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    label1.Text = "Nelze dělit nulou!";
                     Clear();
                 }
             }
