@@ -27,6 +27,12 @@ namespace MathLib
             }
             return number;    
         }
+        // Return division of 2 number, num1/num2, if num 2 is 0 exception is throwned
+        public static double Divide(double num1, double num2)
+        {
+            if (num2 == 0) throw new DivideByZeroException();
+            return num1 / num2;
+        }
 
         /// <summary>
         /// Function to calculate the factorial of a number.
