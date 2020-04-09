@@ -54,19 +54,21 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.nápovědaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.BackColor = System.Drawing.SystemColors.Menu;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button1.Location = new System.Drawing.Point(12, 295);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 50);
             this.button1.TabIndex = 0;
             this.button1.Text = "1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // buttonNeg
@@ -84,13 +86,14 @@
             // button0
             // 
             this.button0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button0.BackColor = System.Drawing.SystemColors.Menu;
             this.button0.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button0.Location = new System.Drawing.Point(68, 351);
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(50, 50);
             this.button0.TabIndex = 2;
             this.button0.Text = "0";
-            this.button0.UseVisualStyleBackColor = true;
+            this.button0.UseVisualStyleBackColor = false;
             this.button0.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // buttonPoint
@@ -108,97 +111,105 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button2.BackColor = System.Drawing.SystemColors.Menu;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button2.Location = new System.Drawing.Point(68, 295);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 50);
             this.button2.TabIndex = 4;
             this.button2.Text = "2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.BackColor = System.Drawing.SystemColors.Menu;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button3.Location = new System.Drawing.Point(124, 295);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(50, 50);
             this.button3.TabIndex = 5;
             this.button3.Text = "3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // button6
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button6.BackColor = System.Drawing.SystemColors.Menu;
             this.button6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button6.Location = new System.Drawing.Point(124, 239);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(50, 50);
             this.button6.TabIndex = 6;
             this.button6.Text = "6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.BackColor = System.Drawing.SystemColors.Menu;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button4.Location = new System.Drawing.Point(12, 239);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 50);
             this.button4.TabIndex = 6;
             this.button4.Text = "4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button5.BackColor = System.Drawing.SystemColors.Menu;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button5.Location = new System.Drawing.Point(68, 239);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(50, 50);
             this.button5.TabIndex = 7;
             this.button5.Text = "5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // button7
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button7.BackColor = System.Drawing.SystemColors.Menu;
             this.button7.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button7.Location = new System.Drawing.Point(12, 183);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(50, 50);
             this.button7.TabIndex = 8;
             this.button7.Text = "7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // button8
             // 
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button8.BackColor = System.Drawing.SystemColors.Menu;
             this.button8.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button8.Location = new System.Drawing.Point(68, 183);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(50, 50);
             this.button8.TabIndex = 9;
             this.button8.Text = "8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // button9
             // 
             this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button9.BackColor = System.Drawing.SystemColors.Menu;
             this.button9.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button9.Location = new System.Drawing.Point(124, 183);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(50, 50);
             this.button9.TabIndex = 10;
             this.button9.Text = "9";
-            this.button9.UseVisualStyleBackColor = true;
+            this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // buttonDiv
@@ -211,6 +222,7 @@
             this.buttonDiv.TabIndex = 11;
             this.buttonDiv.Text = "/";
             this.buttonDiv.UseVisualStyleBackColor = true;
+            this.buttonDiv.Click += new System.EventHandler(this.buttonTwoNumbersOperation_Click);
             // 
             // buttonMul
             // 
@@ -222,6 +234,7 @@
             this.buttonMul.TabIndex = 12;
             this.buttonMul.Text = "*";
             this.buttonMul.UseVisualStyleBackColor = true;
+            this.buttonMul.Click += new System.EventHandler(this.buttonTwoNumbersOperation_Click);
             // 
             // buttonSub
             // 
@@ -233,6 +246,7 @@
             this.buttonSub.TabIndex = 13;
             this.buttonSub.Text = "-";
             this.buttonSub.UseVisualStyleBackColor = true;
+            this.buttonSub.Click += new System.EventHandler(this.buttonTwoNumbersOperation_Click);
             // 
             // buttonAdd
             // 
@@ -244,6 +258,7 @@
             this.buttonAdd.TabIndex = 14;
             this.buttonAdd.Text = "+";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonTwoNumbersOperation_Click);
             // 
             // buttonPrime
             // 
@@ -266,6 +281,7 @@
             this.buttonEquals.TabIndex = 16;
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = true;
+            this.buttonEquals.Click += new System.EventHandler(this.buttonEquals_Click);
             // 
             // buttonPow
             // 
@@ -276,6 +292,7 @@
             this.buttonPow.TabIndex = 17;
             this.buttonPow.Text = "x^y";
             this.buttonPow.UseVisualStyleBackColor = true;
+            this.buttonPow.Click += new System.EventHandler(this.buttonTwoNumbersOperation_Click);
             // 
             // buttonSqrt
             // 
@@ -287,6 +304,7 @@
             this.buttonSqrt.TabIndex = 18;
             this.buttonSqrt.Text = "√";
             this.buttonSqrt.UseVisualStyleBackColor = true;
+            this.buttonSqrt.Click += new System.EventHandler(this.buttonTwoNumbersOperation_Click);
             // 
             // buttonClear
             // 
@@ -332,7 +350,7 @@
             this.nápovědaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(300, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(300, 30);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -345,12 +363,24 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(12, 49);
+            this.textBox1.Location = new System.Drawing.Point(11, 62);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(276, 47);
             this.textBox1.TabIndex = 23;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox1.WordWrap = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label1.Location = new System.Drawing.Point(14, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 25);
+            this.label1.TabIndex = 24;
             // 
             // Form1
             // 
@@ -358,6 +388,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(300, 413);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonBackspace);
             this.Controls.Add(this.buttonFaktorial);
@@ -426,6 +457,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem nápovědaToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
