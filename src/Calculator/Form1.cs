@@ -72,7 +72,7 @@ namespace Calculator
 
         private void buttonPrime_Click(object sender, EventArgs e)
         {
-            long number = Convert.ToInt64(textBox1.Text);
+            double number = Convert.ToDouble(textBox1.Text);
             number = MathClass.FirstPrimeNumberAfterNumber(number);
             textBox1.Text = number.ToString();
         }

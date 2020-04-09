@@ -6,8 +6,17 @@ namespace MathLib
     {
         // Zde doplňte vaše matematické funkce
 
-        // Return first prime number after given number.
-        public static long FirstPrimeNumberAfterNumber(long number){
+        /// <summary>
+        /// Calculate prime number after certain number.
+        /// </summary>
+        /// <remarks>Autor: Michal Rivola (xrivol01)</remarks>
+        /// <exception cref="System.OverflowException">
+        /// Thrown if a HUUUGE number is entered.
+        /// </exception>
+        /// <param name="number">Number from which start calculating Prime number</param>
+        /// <returns>Calculated division.</returns>
+        public static long FirstPrimeNumberAfterNumber(double number){
+            number = Math.Floor(number);
             if (number < 2) return 2; // 2 is first prime number
             if(number % 2 == 0) number--;   // Make number odd
             bool finded = false;  
@@ -25,7 +34,7 @@ namespace MathLib
                         finded = true;
                 }
             }
-            return number;    
+            return Convert.ToInt64(number);    
         }
         /// <summary>
         /// Function to calculate the division of two number.
