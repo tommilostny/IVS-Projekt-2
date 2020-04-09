@@ -72,7 +72,7 @@ namespace Calculator
 
         private void buttonPrime_Click(object sender, EventArgs e)
         {
-            long number=Convert.ToInt64(textBox1.Text);
+            long number = Convert.ToInt64(textBox1.Text);
             number = MathClass.FirstPrimeNumberAfterNumber(number);
             textBox1.Text = number.ToString();
         }
@@ -83,9 +83,13 @@ namespace Calculator
             {
                 textBox1.Text = MathClass.Factorial(Convert.ToInt64(textBox1.Text)).ToString();
             }
+            catch (FormatException)
+            {
+                Show_ErrorMessage("Faktoriál lze počítat pouze pro celá čísla.");
+            }
             catch (Exception exception)
             {
-                label1.Text = exception.Message;
+                Show_ErrorMessage(exception.Message);
             }
         }
 
@@ -139,10 +143,9 @@ namespace Calculator
                     curr_operation = operations.NONE;
                     num1 = result;
                 }
-                catch (DivideByZeroException)
+                catch (Exception exception)
                 {
-                    label1.Text = "Nelze dělit nulou!";
-                    Clear();
+                    Show_ErrorMessage(exception.Message);   
                 }
             }
         }
@@ -232,6 +235,12 @@ namespace Calculator
                 textBox1.Text = textBox1.Text.Remove(0, 1);
                 textBox1.SelectionStart = textBox1.Text.Length;
             }
+        }
+
+        private void Show_ErrorMessage(string message)
+        {
+            Clear();
+            label1.Text = message;
         }
     }
 }

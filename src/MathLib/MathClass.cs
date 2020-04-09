@@ -39,7 +39,7 @@ namespace MathLib
         /// <returns>Calculated division.</returns>
         public static double Divide(double number1, double number2)
         {
-            if (number2 == 0) throw new DivideByZeroException();
+            if (number2 == 0) throw new DivideByZeroException("Nelze dělit 0.");
             return number1 / number2;
         }
 
@@ -55,7 +55,7 @@ namespace MathLib
         public static long Factorial(long number)
         {
             if (number < 0)
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException("Faktoriál lze počítat pouze pro celá čísla.");
 
             if (number <= 1)
                 return 1;
