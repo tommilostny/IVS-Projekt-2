@@ -55,7 +55,7 @@ namespace MathLib
         public static long Factorial(long number)
         {
             if (number < 0)
-                throw new ArgumentOutOfRangeException("Faktoriál lze počítat pouze pro celá čísla.");
+                throw new ArgumentOutOfRangeException();
 
             if (number <= 1)
                 return 1;
