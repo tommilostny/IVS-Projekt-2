@@ -9,33 +9,45 @@ namespace Profiling
     {
         static void Main(string[] args)
         {
-            string line;
-            List<double> xi = new List<double>();
+            double s = 0; //result standard deviation
+            int N = 0; //N = count of numbers x
+            double xi_sum = 0;
 
             //loading input numbers from stdin
+            string line;
             while ((line = Console.ReadLine()) != null)
             {
-                xi.Add(Convert.ToDouble(line));
+                try
+                {
+                    double number = Convert.ToDouble(line);
+
+                    s = s + Math.Pow(number, 2); // sum( xi^2 )     //TODO: replace with our add, power methods
+
+                    N = N + 1; // TODO: replace with our add
+
+                    xi_sum = xi_sum + number; // sum(xi)   // TODO: replace with our add
+                }
+                catch (Exception e) { Console.WriteLine(e.Message); }
             }
 
-            int N = xi.Count; //N = count of numbers x
+            try
+            {
+                double xx = MathClass.Divide(xi_sum, N); // x' = 1/N * sum(xi) = sum(xi)/N
 
-            double s = xi.Sum(a => Math.Pow(a, 2)); // sum( xi^2 )     (TODO replace with out power method)
+                xx = Math.Pow(xx, 2); // x'^2     //TODO: replace with our power method
 
-            double xx = MathClass.Divide(xi.Sum(), N); // x' = 1/N * sum(xi) = sum(xi)/N
+                xx = N * xx; // N * x'^2      //TODO: replace with our multiplication method
 
-            xx = Math.Pow(xx, 2); // x' ^ 2     (TODO: replace with our power method)
+                s = MathClass.Subract(s, xx); // sum(xi^2) - (N * x'^2)
 
-            xx = N * xx; // N * x'^2     (TODO: replace with our multiplication method)
+                s = MathClass.Divide(s, N - 1); // 1/(N-1) * (sum(xi^2) - (N * x'^2))
 
-            s = MathClass.Subract(s, xx); // sum(xi^2) - (N * x'^2)
+                //TODO: replace with our square root method
+                s = Math.Sqrt(s); // second square root of   1/(N-1) * (sum(xi^2) - (N * x'^2))
 
-            s = MathClass.Divide(s, N - 1); // 1/(N-1) * (sum(xi^2) - (N * x'^2))
-
-            //TODO: replace with our square root method
-            s = Math.Sqrt(s); // second square root of   1/(N-1) * (sum(xi^2) - (N * x'^2))
-
-            Console.WriteLine(s);
+                Console.WriteLine(s);
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
         }
     }
 }
