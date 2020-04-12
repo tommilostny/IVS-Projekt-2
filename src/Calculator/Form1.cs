@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using MathLib;
 
 namespace Calculator
@@ -64,24 +56,28 @@ namespace Calculator
 
         private void buttonPrime_Click(object sender, EventArgs e)
         {
-            long number = Convert.ToInt64(textBox1.Text);
-            number = MathClass.FirstPrimeNumberAfterNumber(number);
-            textBox1.Text = number.ToString();
+            label1.Text = textBox1.Text + ": nejbližší prvočíslo =";
+            textBox1.Text = MathClass.FirstPrimeNumberAfterNumber(Convert.ToDouble(textBox1.Text)).ToString();
         }
 
         private void buttonFaktorial_Click(object sender, EventArgs e)
         {
             try
             {
-                textBox1.Text = MathClass.Factorial(Convert.ToInt64(textBox1.Text)).ToString();
+                label1.Text = textBox1.Text + "! =";
+                textBox1.Text = MathClass.Factorial(Convert.ToInt32(textBox1.Text)).ToString();
             }
             catch (FormatException)
             {
                 Show_ErrorMessage("Faktoriál lze počítat pouze pro celá čísla.");
             }
+            catch (OverflowException)
+            {
+                Show_ErrorMessage("Příliš vysoké číslo pro faktoriál.");
+            }
             catch (ArgumentOutOfRangeException)
             {
-                Show_ErrorMessage("Faktoriál lze počítat pouze pro celá čísla.");
+                Show_ErrorMessage("Faktoriál lze počítat pouze větší než 0.");
             }
         }
 
@@ -126,7 +122,7 @@ namespace Calculator
                             //TODO: Insert power method here
                             break;
                         case operations.SQRT:
-                            //TODO: Insert square root method here
+                            result = MathClass.Sqrt(num1, num2);
                             break;
                     }
                     textBox1.Text = Convert.ToDouble(result).ToString();
@@ -227,11 +223,20 @@ namespace Calculator
 
         private void buttonSqrt_Click(object sender, EventArgs e)
         {
-            //TODO: call second square root for textbox text
+            try
+            {
+                label1.Text = '√' + textBox1.Text + " =";
+                textBox1.Text = MathClass.Sqrt(2.0, Convert.ToDouble(textBox1.Text)).ToString();
+            }
+            catch (Exception exc)
+            {
+                Show_ErrorMessage(exc.Message);
+            }
         }
 
         private void PowerOf2_button_Click(object sender, EventArgs e)
         {
+            label1.Text = textBox1.Text + "² =";
             //TODO: call second power for textbox text
         }
 

@@ -4,29 +4,42 @@ namespace MathLib
 {
     public static class MathClass
     {
-        // Zde doplňte vaše matematické funkce
-
-        // Return first prime number after given number.
-        public static long FirstPrimeNumberAfterNumber(long number){
+        /// <summary>
+        /// Calculate prime number after certain number.
+        /// </summary>
+        /// <remarks>Autor: Michal Rivola (xrivol01)</remarks>
+        /// <exception cref="System.OverflowException">
+        /// Thrown if a HUUUGE number is entered.
+        /// </exception>
+        /// <param name="number">Number from which start calculating Prime number</param>
+        /// <returns>Calculated division.</returns>
+        public static long FirstPrimeNumberAfterNumber(double number)
+        {
+            number = Math.Floor(number);
             if (number < 2) return 2; // 2 is first prime number
-            if(number % 2 == 0) number--;   // Make number odd
-            bool finded = false;  
+            if (number % 2 == 0) number--;   // Make number odd
+            bool finded = false;
             bool findedFactor;
-            while(!finded){
+            while (!finded)
+            {
                 findedFactor = true;
-                number+=2;
-                for(int i = 3;i <= Math.Sqrt(number); i += 2){    // ----TODO: Replace with our Sqrt function
-                    if(number % i == 0) {
+                number += 2;
+                for (int i = 3; i <= Math.Sqrt(number); i += 2)
+                {    // ----TODO: Replace with our Sqrt function
+                    if (number % i == 0)
+                    {
                         findedFactor = false;
                         break;
                     }
                 }
-                if(findedFactor){
-                        finded = true;
+                if (findedFactor)
+                {
+                    finded = true;
                 }
             }
-            return number;    
+            return Convert.ToInt64(number);
         }
+
         /// <summary>
         /// Function to calculate the division of two number.
         /// </summary>
@@ -52,7 +65,7 @@ namespace MathLib
         /// </exception>
         /// <param name="number">Number to calculate factorial from.</param>
         /// <returns>Calculated factorial.</returns>
-        public static long Factorial(long number)
+        public static double Factorial(int number)
         {
             if (number < 0)
                 throw new ArgumentOutOfRangeException();
@@ -60,10 +73,12 @@ namespace MathLib
             if (number <= 1)
                 return 1;
 
-            long result = 2;
-            for (int i = 3; i <= number; i++)
+            double result = 2;
+            for (double i = 3; i <= number; i++)
             {
                 result *= i;
+                if (double.IsInfinity(result))
+                    throw new OverflowException();
             }
             return result;
         }
@@ -78,6 +93,32 @@ namespace MathLib
         public static double Subract(double num1, double num2)
         {
             return num1 - num2;
+        }
+
+        /// <summary>
+        /// Function to calculate the radical.
+        /// </summary>
+        /// <remarks>Autor: Daniel Ponížil (xponiz01)</remarks>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// <param name="num1">Index (degree) of the root.</param>
+        /// <param name="num2">Root number.</param>
+        /// <returns>Calculated radical.</returns>
+        public static double Sqrt(double num1, double num2)
+        {
+            if (num2 < 0)
+                throw new ArgumentOutOfRangeException();
+
+            double result = 0;
+            if (num2 == 0)
+                return result;
+
+            if (num1 < 0)
+                throw new ArgumentException();
+            if (num1 == 0)
+                num1 = 2;
+
+            result = Math.Pow(num2, 1.0 / num1);
+            return result;
         }
 
         /// <summary>
