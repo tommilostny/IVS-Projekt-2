@@ -98,9 +98,18 @@ namespace MathLibraryTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void SqrtError_Test()
+        public void SqrtError_Test1()
         {
             MathClass.Sqrt(2, -9);
+            MathClass.Sqrt(4, -16);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void SqrtError_Test2()
+        {
+            MathClass.Sqrt(-2, 9);
+            MathClass.Sqrt(0.5, -16);
         }
     }
 }

@@ -100,22 +100,23 @@ namespace MathLib
         /// </summary>
         /// <remarks>Autor: Daniel Ponížil (xponiz01)</remarks>
         /// <exception cref="System.ArgumentOutOfRangeException">
+        /// /// <exception cref="System.ArgumentException">
         /// <param name="num1">Index (degree) of the root.</param>
         /// <param name="num2">Root number.</param>
         /// <returns>Calculated radical.</returns>
         public static double Sqrt(double num1, double num2)
         {
-            if (num2 < 0)
-                throw new ArgumentOutOfRangeException();
+            if (num2 < 0 && num1 %2 == 0)
+            {
+                throw new ArgumentOutOfRangeException("Zadejte kladné číslo nebo lichého odmocnitele");
+            }
 
             double result = 0;
             if (num2 == 0)
                 return result;
 
-            if (num1 < 0)
-                throw new ArgumentException();
-            if (num1 == 0)
-                num1 = 2;
+            if (num1 < 1)
+                throw new ArgumentException("Odmocnitel musí být větší než 0");
 
             result = Math.Pow(num2, 1.0 / num1);
             return result;
