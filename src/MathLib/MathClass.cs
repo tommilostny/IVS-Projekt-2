@@ -109,7 +109,7 @@ namespace MathLib
             double result = 0;
             if (num2 < 0 && num1 %2 == 0)
             {
-                throw new ArgumentOutOfRangeException("Zadejte kladné číslo nebo lichého odmocnitele");
+                throw new ArgumentOutOfRangeException();
             }
 
             if (num2 < 0 && num1 %2 != 0)
@@ -123,7 +123,7 @@ namespace MathLib
                 return result;
 
             if (num1 < 1)
-                throw new ArgumentException("Odmocnitel musí být větší než 0");
+                throw new ArgumentException();
 
             result = Math.Pow(num2, 1.0 / num1);
             return result;

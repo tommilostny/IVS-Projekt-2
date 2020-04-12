@@ -131,6 +131,14 @@ namespace Calculator
                     curr_operation = operations.NONE;
                     num1 = result;
                 }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Show_ErrorMessage("Zadejte kladné číslo nebo lichého odmocnitele");
+                }
+                catch (ArgumentException)
+                {
+                    Show_ErrorMessage("Odmocnitel musí být větší než 0");
+                }
                 catch (Exception exception)
                 {
                     Show_ErrorMessage(exception.Message);   
