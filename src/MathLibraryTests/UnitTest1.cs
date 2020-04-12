@@ -100,8 +100,10 @@ namespace MathLibraryTests
         public void Sqrt_Test()
         {
             Assert.AreEqual(3, MathClass.Sqrt(2, 9)); // 2√9 = 3
-            Assert.AreEqual(4, MathClass.Sqrt(3, 64)); // 3√64 = 4
-            Assert.AreEqual(2, MathClass.Sqrt(4, 16)); // 4√16 = 2
+            Assert.AreEqual(3, MathClass.Sqrt(3, 27)); // 3√27 = 3
+            Assert.AreEqual(3, MathClass.Sqrt(4, 81)); // 4√81 = 3
+            Assert.AreEqual(-2, MathClass.Sqrt(3, -8)); // 3√(-8) = -2
+            Assert.AreEqual(-2, MathClass.Sqrt(5, -32)); // 5√(-32) = -2
         }
 
         [TestMethod]
