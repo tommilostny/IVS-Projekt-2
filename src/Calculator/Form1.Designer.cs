@@ -307,7 +307,7 @@
             this.buttonSqrt.TabIndex = 18;
             this.buttonSqrt.Text = "√";
             this.buttonSqrt.UseVisualStyleBackColor = true;
-            this.buttonSqrt.Click += new System.EventHandler(this.buttonTwoNumbersOperation_Click);
+            this.buttonSqrt.Click += new System.EventHandler(this.buttonSqrt_Click);
             // 
             // buttonClear
             // 
@@ -394,6 +394,7 @@
             this.PowerOf2_button.TabIndex = 25;
             this.PowerOf2_button.Text = "x²";
             this.PowerOf2_button.UseVisualStyleBackColor = true;
+            this.PowerOf2_button.Click += new System.EventHandler(this.PowerOf2_button_Click);
             // 
             // SqrtXofY_button
             // 
@@ -405,6 +406,7 @@
             this.SqrtXofY_button.TabIndex = 26;
             this.SqrtXofY_button.Text = "x√y";
             this.SqrtXofY_button.UseVisualStyleBackColor = true;
+            this.SqrtXofY_button.Click += new System.EventHandler(this.buttonTwoNumbersOperation_Click);
             // 
             // ClearEntry_button
             // 
@@ -416,6 +418,7 @@
             this.ClearEntry_button.TabIndex = 27;
             this.ClearEntry_button.Text = "CE";
             this.ClearEntry_button.UseVisualStyleBackColor = true;
+            this.ClearEntry_button.Click += new System.EventHandler(this.ClearEntry_button_Click);
             // 
             // Form1
             // 
@@ -457,10 +460,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Opacity = 0.95D;
+            this.Opacity = 0.98D;
             this.ShowIcon = false;
             this.Text = "Kalkulačka";
             this.menuStrip1.ResumeLayout(false);

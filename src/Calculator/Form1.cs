@@ -53,14 +53,6 @@ namespace Calculator
 
         private void buttonNeg_Click(object sender, EventArgs e)
         {
-            if (curr_operation == operations.NONE)
-            {
-                if (label1.Text == string.Empty)
-                    label1.Text = textBox1.Text;
-
-                label1.Text = "-(" + label1.Text.Replace(" =", string.Empty) + ") =";
-            }
-
             textBox1.Text = (-1 * Convert.ToDouble(textBox1.Text)).ToString();
         }
 
@@ -172,7 +164,7 @@ namespace Calculator
                 case "*": curr_operation = operations.MUL; break;
                 case "/": curr_operation = operations.DIV; break;
                 case "x^y": curr_operation = operations.POW; break;
-                case "√": curr_operation = operations.SQRT; break;
+                case "x√y": curr_operation = operations.SQRT; break;
             }
             label1.Text = num1.ToString() + ' ' + (char)curr_operation;
             textBox1.Text = "0";
@@ -231,6 +223,21 @@ namespace Calculator
                 textBox1.Text = textBox1.Text.Remove(0, 1);
                 textBox1.SelectionStart = textBox1.Text.Length;
             }
+        }
+
+        private void buttonSqrt_Click(object sender, EventArgs e)
+        {
+            //TODO: call second square root for textbox text
+        }
+
+        private void PowerOf2_button_Click(object sender, EventArgs e)
+        {
+            //TODO: call second power for textbox text
+        }
+
+        private void ClearEntry_button_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "0";
         }
 
         private void Show_ErrorMessage(string message)
