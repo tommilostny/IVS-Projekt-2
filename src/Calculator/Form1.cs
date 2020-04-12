@@ -134,7 +134,7 @@ namespace Calculator
                             //TODO: Insert power method here
                             break;
                         case operations.SQRT:
-                            //TODO: Insert square root method here
+                            result = MathClass.Sqrt(num1, num2);
                             break;
                     }
                     textBox1.Text = Convert.ToDouble(result).ToString();

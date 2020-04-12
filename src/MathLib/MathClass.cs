@@ -79,5 +79,23 @@ namespace MathLib
         {
             return num1 - num2;
         }
+
+        public static double Sqrt(double num1, double num2)
+        {
+            if (num2 < 0)
+                throw new ArgumentOutOfRangeException();
+
+            double result = 0;
+            if (num2 == 0)
+                return result;
+
+            if (num1 < 0)
+                throw new ArgumentException();
+            if (num1 == 0)
+                num1 = 2;
+
+            result = Math.Pow(num2, 1.0 / num1);
+            return result;
+        }
     }
 }
