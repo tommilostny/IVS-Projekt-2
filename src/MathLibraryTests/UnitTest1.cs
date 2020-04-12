@@ -93,7 +93,7 @@ namespace MathLibraryTests
         {
             Assert.AreEqual(3, MathClass.Sqrt(2, 9)); // 2√9 = 3
             Assert.AreEqual(4, MathClass.Sqrt(3, 64)); // 3√64 = 4
-            Assert.AreEqual(2, MathClass.Sqrt(4, 16)); // 2√9 = 3
+            Assert.AreEqual(2, MathClass.Sqrt(4, 16)); // 4√16 = 2
         }
 
         [TestMethod]

@@ -106,12 +106,19 @@ namespace MathLib
         /// <returns>Calculated radical.</returns>
         public static double Sqrt(double num1, double num2)
         {
+            double result = 0;
             if (num2 < 0 && num1 %2 == 0)
             {
                 throw new ArgumentOutOfRangeException("Zadejte kladné číslo nebo lichého odmocnitele");
             }
 
-            double result = 0;
+            if (num2 < 0 && num1 %2 != 0)
+            {
+                double tmp = Math.Abs(num2);
+                result = Math.Pow(tmp, 1.0 / num1);
+                return -result;
+            }
+
             if (num2 == 0)
                 return result;
 
