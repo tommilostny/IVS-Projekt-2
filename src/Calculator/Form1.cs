@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using MathLib;
 
 namespace Calculator
@@ -53,14 +45,6 @@ namespace Calculator
 
         private void buttonNeg_Click(object sender, EventArgs e)
         {
-            if (curr_operation == operations.NONE)
-            {
-                if (label1.Text == string.Empty)
-                    label1.Text = textBox1.Text;
-
-                label1.Text = "-(" + label1.Text.Replace(" =", string.Empty) + ") =";
-            }
-
             textBox1.Text = (-1 * Convert.ToDouble(textBox1.Text)).ToString();
         }
 
@@ -72,22 +56,28 @@ namespace Calculator
 
         private void buttonPrime_Click(object sender, EventArgs e)
         {
-            double number = Convert.ToDouble(textBox1.Text);
-            number = MathClass.FirstPrimeNumberAfterNumber(number);
-            textBox1.Text = number.ToString();
+            label1.Text = textBox1.Text + ": nejbližší prvočíslo =";
+            textBox1.Text = MathClass.FirstPrimeNumberAfterNumber(Convert.ToDouble(textBox1.Text)).ToString();
         }
 
         private void buttonFaktorial_Click(object sender, EventArgs e)
         {
             try
             {
-                double f_num = Convert.ToDouble(textBox1.Text);
-                textBox1.Text = MathClass.Factorial(f_num).ToString();
-                label1.Text = $"fact({f_num}) =";
+                label1.Text = textBox1.Text + "! =";
+                textBox1.Text = MathClass.Factorial(Convert.ToInt32(textBox1.Text)).ToString();
             }
-            catch (Exception exc)
+            catch (FormatException)
             {
-                Show_ErrorMessage(exc.Message);
+                Show_ErrorMessage("Faktoriál lze počítat pouze pro celá čísla.");
+            }
+            catch (OverflowException)
+            {
+                Show_ErrorMessage("Příliš vysoké číslo pro faktoriál.");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Show_ErrorMessage("Faktoriál lze počítat pouze větší než 0.");
             }
         }
 
@@ -123,7 +113,7 @@ namespace Calculator
                             result = MathClass.Subract(num1, num2);
                             break;
                         case operations.MUL:
-                            //TODO: Insert multiplication method here
+                            result = MathClass.Mul(num1, num2);
                             break;
                         case operations.DIV:
                             result = MathClass.Divide(num1, num2);
@@ -132,7 +122,7 @@ namespace Calculator
                             //TODO: Insert power method here
                             break;
                         case operations.SQRT:
-                            //TODO: Insert square root method here
+                            result = MathClass.Sqrt(num1, num2);
                             break;
                     }
                     textBox1.Text = Convert.ToDouble(result).ToString();
@@ -170,7 +160,7 @@ namespace Calculator
                 case "*": curr_operation = operations.MUL; break;
                 case "/": curr_operation = operations.DIV; break;
                 case "x^y": curr_operation = operations.POW; break;
-                case "√": curr_operation = operations.SQRT; break;
+                case "x√y": curr_operation = operations.SQRT; break;
             }
             label1.Text = num1.ToString() + ' ' + (char)curr_operation;
             textBox1.Text = "0";
@@ -224,11 +214,35 @@ namespace Calculator
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             //Remove leading zero character
-            if (textBox1.Text.Length > 1 && textBox1.Text.Contains("0") && textBox1.Text[0] == '0' && textBox1.Text[1] != ',')
+            if (textBox1.Text.Length > 1 && textBox1.Text.Contains("0") && textBox1.Text[0] == '0')
             {
                 textBox1.Text = textBox1.Text.Remove(0, 1);
                 textBox1.SelectionStart = textBox1.Text.Length;
             }
+        }
+
+        private void buttonSqrt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                label1.Text = '√' + textBox1.Text + " =";
+                textBox1.Text = MathClass.Sqrt(2.0, Convert.ToDouble(textBox1.Text)).ToString();
+            }
+            catch (Exception exc)
+            {
+                Show_ErrorMessage(exc.Message);
+            }
+        }
+
+        private void PowerOf2_button_Click(object sender, EventArgs e)
+        {
+            label1.Text = textBox1.Text + "² =";
+            //TODO: call second power for textbox text
+        }
+
+        private void ClearEntry_button_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "0";
         }
 
         private void Show_ErrorMessage(string message)
