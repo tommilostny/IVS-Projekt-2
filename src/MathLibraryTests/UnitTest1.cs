@@ -51,8 +51,8 @@ namespace MathLibraryTests
         [TestMethod]
         public void FactorialResults_Test()
         {
-            long[] numbers = { 0, 1, 2, 3, 4, 5, 6, 11, 20 };
-            long[] results = { 1, 1, 2, 6, 24, 120, 720, 39916800, 2432902008176640000 };
+            int[] numbers = { 0, 1, 2, 3, 4, 5, 6, 11, 20 };
+            double[] results = { 1, 1, 2, 6, 24, 120, 720, 39916800, 2432902008176640000 };
 
             for (int i = 0; i < numbers.Length; i++)
                 Assert.AreEqual(results[i], MathClass.Factorial(numbers[i]));
