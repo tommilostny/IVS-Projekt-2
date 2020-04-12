@@ -21,21 +21,6 @@ namespace MathLibraryTests
             Assert.AreEqual(149, MathClass.FirstPrimeNumberAfterNumber(141));
             Assert.AreEqual(149, MathClass.FirstPrimeNumberAfterNumber(144));
         }
-        [TestMethod]
-        public void DivisionTest()
-        {
-            Assert.AreEqual(1 , MathClass.Divide(2, 2));
-            Assert.AreEqual(0.5, MathClass.Divide(2, 4));
-            Assert.AreEqual(-2, MathClass.Divide(2, -1));
-            Assert.AreEqual(-1, MathClass.Divide(2, -2));
-            Assert.AreEqual(2, MathClass.Divide(-6, -3));
-
-            //Must throw an expetion.
-            Assert.ThrowsException<DivideByZeroException>(() => MathClass.Divide(1, 0));
-            Assert.ThrowsException<DivideByZeroException>(() => MathClass.Divide(-1, 0));
-
-        }
-
     }
 
     [TestClass]
@@ -57,6 +42,13 @@ namespace MathLibraryTests
             for (int i = 0; i < numbers.Length; i++)
                 Assert.AreEqual(results[i], MathClass.Factorial(numbers[i]));
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(OverflowException))]
+        public void FactorialOverflow_Test()
+        {
+            MathClass.Factorial(333);
+        }
     }
 
     [TestClass]
@@ -72,6 +64,22 @@ namespace MathLibraryTests
 
             Assert.AreEqual(10, MathClass.Subract(5, -5)); //5 - -5 = 5 + 5 = 10 
         }
+
+        [TestMethod]
+        public void DivisionTest()
+        {
+            Assert.AreEqual(1, MathClass.Divide(2, 2));
+            Assert.AreEqual(0.5, MathClass.Divide(2, 4));
+            Assert.AreEqual(-2, MathClass.Divide(2, -1));
+            Assert.AreEqual(-1, MathClass.Divide(2, -2));
+            Assert.AreEqual(2, MathClass.Divide(-6, -3));
+
+            //Must throw an expetion.
+            Assert.ThrowsException<DivideByZeroException>(() => MathClass.Divide(1, 0));
+            Assert.ThrowsException<DivideByZeroException>(() => MathClass.Divide(-1, 0));
+
+        }
+
         [TestMethod]
         public void Mul_Test()
         {
