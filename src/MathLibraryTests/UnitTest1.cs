@@ -72,5 +72,16 @@ namespace MathLibraryTests
 
             Assert.AreEqual(10, MathClass.Subract(5, -5)); //5 - -5 = 5 + 5 = 10 
         }
+        [TestMethod]
+        public void Mul_Test()
+        {
+            Assert.AreEqual(8, MathClass.Mul(2, 4)); //2 * 4 = 8
+            Assert.AreEqual(-10, MathClass.Mul(2, -5)); //2 * (-5) = -10
+            Assert.AreEqual(-12, MathClass.Mul(-4, 3)); //-4 * 3 = -12
+            Assert.AreEqual(6, MathClass.Mul(-2, -3)); //-2 * (-3) = 6
+
+            for (double i = -15; i <=15; i++)
+                Assert.AreEqual(Math.Pow(i, 2), MathClass.Mul(i, i));
+        }
     }
 }

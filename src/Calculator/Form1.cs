@@ -117,7 +117,7 @@ namespace Calculator
                             result = MathClass.Subract(num1, num2);
                             break;
                         case operations.MUL:
-                            //TODO: Insert multiplication method here
+                            result = MathClass.Mul(num1, num2);
                             break;
                         case operations.DIV:
                             result = MathClass.Divide(num1, num2);
