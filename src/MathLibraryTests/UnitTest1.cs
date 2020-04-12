@@ -73,4 +73,23 @@ namespace MathLibraryTests
             Assert.AreEqual(10, MathClass.Subract(5, -5)); //5 - -5 = 5 + 5 = 10 
         }
     }
+
+    [TestClass]
+    public class Sqrt_UnitTest
+    {
+        [TestMethod]
+        public void Sqrt_Test()
+        {
+            Assert.AreEqual(3, MathClass.Sqrt(2, 9)); // 2√9 = 3
+            Assert.AreEqual(4, MathClass.Sqrt(3, 64)); // 3√64 = 4
+            Assert.AreEqual(2, MathClass.Sqrt(4, 16)); // 2√9 = 3
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void SqrtError_Test()
+        {
+            MathClass.Sqrt(2, -9);
+        }
+    }
 }
