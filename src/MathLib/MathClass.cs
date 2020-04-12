@@ -140,5 +140,17 @@ namespace MathLib
         {
             return num1 * num2;
         }
+
+        /// <summary>
+        /// Function to calculate the exponentiotion.
+        /// </summary>
+        /// <remarks>Autor: Richard Paul (xpaulr01)</remarks>
+        /// <param name="num1">Number for exponentiation.</param>
+        /// <param name="num2">Potentiator.</param>
+        /// <returns>Calculated exponentiotion.</returns>
+        public static double Pow(double num1, double num2)
+        {
+            return Math.Pow(num1, num2);
+        }
     }
 }
