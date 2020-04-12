@@ -81,6 +81,7 @@ namespace MathLib
         /// Function to calculate the radical.
         /// </summary>
         /// <remarks>Autor: Daniel Ponížil (xponiz01)</remarks>
+        /// <exception cref="System.ArgumentOutOfRangeException">
         /// <param name="num1">Index (degree) of the root.</param>
         /// <param name="num2">Root number.</param>
         /// <returns>Calculated radical.</returns>
