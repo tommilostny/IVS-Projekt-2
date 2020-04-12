@@ -79,5 +79,17 @@ namespace MathLib
         {
             return num1 - num2;
         }
+
+        /// <summary>
+        /// Function to calculate the multiplication.
+        /// </summary>
+        /// <remarks>Autor: Daniel Ponížil (xponiz01)</remarks>
+        /// <param name="num1">First number for multiplication.</param>
+        /// <param name="num2">Second number for multiplication.</param>
+        /// <returns>Calculated multiplication.</returns>
+        public static double Mul(double num1, double num2)
+        {
+            return num1 * num2;
+        }
     }
 }
