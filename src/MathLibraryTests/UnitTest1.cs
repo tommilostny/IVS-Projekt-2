@@ -21,30 +21,31 @@ namespace MathLibraryTests
             Assert.AreEqual(149, MathClass.FirstPrimeNumberAfterNumber(141));
             Assert.AreEqual(149, MathClass.FirstPrimeNumberAfterNumber(144));
         }
+        [TestMethod]
+        public void DivisionTest()
+        {
+            Assert.AreEqual(1 , MathClass.Divide(2, 2));
+            Assert.AreEqual(0.5, MathClass.Divide(2, 4));
+            Assert.AreEqual(-2, MathClass.Divide(2, -1));
+            Assert.AreEqual(-1, MathClass.Divide(2, -2));
+            Assert.AreEqual(2, MathClass.Divide(-6, -3));
+
+            //Must throw an expetion.
+            Assert.ThrowsException<DivideByZeroException>(() => MathClass.Divide(1, 0));
+            Assert.ThrowsException<DivideByZeroException>(() => MathClass.Divide(-1, 0));
+
+        }
+
     }
 
     [TestClass]
     public class Factorial_UnitTest
     {
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void FactorialNegatives_Test()
         {
             MathClass.Factorial(-1);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(OverflowException))]
-        public void FactorialBigNumbers_Test()
-        {
-            MathClass.Factorial(12345);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(FormatException))]
-        public void FactorialDecimals_Test()
-        {
-            MathClass.Factorial(5.5);
         }
 
         [TestMethod]
@@ -71,20 +72,35 @@ namespace MathLibraryTests
 
             Assert.AreEqual(10, MathClass.Subract(5, -5)); //5 - -5 = 5 + 5 = 10 
         }
+        [TestMethod]
+        public void Mul_Test()
+        {
+            Assert.AreEqual(8, MathClass.Mul(2, 4)); //2 * 4 = 8
+            Assert.AreEqual(-10, MathClass.Mul(2, -5)); //2 * (-5) = -10
+            Assert.AreEqual(-12, MathClass.Mul(-4, 3)); //-4 * 3 = -12
+            Assert.AreEqual(6, MathClass.Mul(-2, -3)); //-2 * (-3) = 6
+
+            for (double i = -15; i <=15; i++)
+                Assert.AreEqual(Math.Pow(i, 2), MathClass.Mul(i, i));
+        }
+    }
+
+    [TestClass]
+    public class Sqrt_UnitTest
+    {
+        [TestMethod]
+        public void Sqrt_Test()
+        {
+            Assert.AreEqual(3, MathClass.Sqrt(2, 9)); // 2√9 = 3
+            Assert.AreEqual(4, MathClass.Sqrt(3, 64)); // 3√64 = 4
+            Assert.AreEqual(2, MathClass.Sqrt(4, 16)); // 2√9 = 3
+        }
 
         [TestMethod]
-        public void DivisionTest()
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void SqrtError_Test()
         {
-            Assert.AreEqual(1, MathClass.Divide(2, 2));
-            Assert.AreEqual(0.5, MathClass.Divide(2, 4));
-            Assert.AreEqual(-2, MathClass.Divide(2, -1));
-            Assert.AreEqual(-1, MathClass.Divide(2, -2));
-            Assert.AreEqual(2, MathClass.Divide(-6, -3));
-
-            //Must throw an expetion.
-            Assert.ThrowsException<DivideByZeroException>(() => MathClass.Divide(1, 0));
-            Assert.ThrowsException<DivideByZeroException>(() => MathClass.Divide(-1, 0));
-
+            MathClass.Sqrt(2, -9);
         }
     }
 }

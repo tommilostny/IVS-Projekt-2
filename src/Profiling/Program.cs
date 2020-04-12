@@ -36,14 +36,13 @@ namespace Profiling
 
                 xx = Math.Pow(xx, 2); // x'^2     //TODO: replace with our power method
 
-                xx = N * xx; // N * x'^2      //TODO: replace with our multiplication method
+                xx = MathClass.Mul(N, xx); // N * x'^2
 
                 s = MathClass.Subract(s, xx); // sum(xi^2) - (N * x'^2)
 
                 s = MathClass.Divide(s, N - 1); // 1/(N-1) * (sum(xi^2) - (N * x'^2))
 
-                //TODO: replace with our square root method
-                s = Math.Sqrt(s); // second square root of   1/(N-1) * (sum(xi^2) - (N * x'^2))
+                s = MathClass.Sqrt(2, s); // square root of   1/(N-1) * (sum(xi^2) - (N * x'^2))
 
                 Console.WriteLine(s);
             }
