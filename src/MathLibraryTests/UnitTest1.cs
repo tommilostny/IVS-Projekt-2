@@ -91,6 +91,15 @@ namespace MathLibraryTests
             for (double i = -15; i <=15; i++)
                 Assert.AreEqual(Math.Pow(i, 2), MathClass.Mul(i, i));
         }
+
+        [TestMethod]
+        public void Pow_Test()
+        {
+            Assert.AreEqual(4, MathClass.Pow(2, 2)); //2^2 = 4
+            Assert.AreEqual(125, MathClass.Pow(5, 3)); //5^3 = 125
+            Assert.AreEqual(0.0625, MathClass.Pow(4, -2)); //-4^(-2) = 0.0625
+            Assert.AreEqual(0.001, MathClass.Pow(10, -3)); //10^(-3) = 0.001
+        }
     }
 
     [TestClass]
