@@ -99,6 +99,7 @@ namespace MathLibraryTests
             Assert.AreEqual(125, MathClass.Pow(5, 3)); //5^3 = 125
             Assert.AreEqual(0.0625, MathClass.Pow(4, -2)); //-4^(-2) = 0.0625
             Assert.AreEqual(0.001, MathClass.Pow(10, -3)); //10^(-3) = 0.001
+            Assert.AreEqual(0.25, MathClass.Pow(0.5, 2)); //0.5^2 = 0.25
         }
     }
 
