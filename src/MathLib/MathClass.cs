@@ -154,12 +154,12 @@ namespace MathLib
         }
 
         // <summary>
-        /// Function to calculate the exponentiotion.
+        /// Function for adding two numbers.
         /// </summary>
         /// <remarks>Autor: Daniel Ponížil (xponiz01)</remarks>
-        /// <param name="num1">Number for exponentiation.</param>
-        /// <param name="num2">Potentiator.</param>
-        /// <returns>Calculated exponentiation.</returns>
+        /// <param name="num1">First number to add.</param>
+        /// <param name="num2">Second number to add.</param>
+        /// <returns>Calculated sum total.</returns>
         public static double Add(double num1, double num2)
         {
             return num1 + num2;
