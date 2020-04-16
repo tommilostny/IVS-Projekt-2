@@ -142,12 +142,12 @@ namespace MathLib
         }
 
         // <summary>
-        /// Function to calculate the multiplication.
+        /// Function to calculate the exponentiotion.
         /// </summary>
         /// <remarks>Autor: Daniel Ponížil (xponiz01)</remarks>
-        /// <param name="num1">First number for multiplication.</param>
-        /// <param name="num2">Second number for multiplication.</param>
-        /// <returns>Calculated multiplication.</returns>
+        /// <param name="num1">Number for exponentiation.</param>
+        /// <param name="num2">Potentiator.</param>
+        /// <returns>Calculated exponentiation.</returns>
         public static double Pow(double num1, double num2)
         {
             return Math.Pow(num1, num2);
