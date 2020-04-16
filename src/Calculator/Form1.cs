@@ -119,7 +119,7 @@ namespace Calculator
                             result = MathClass.Divide(num1, num2);
                             break;
                         case operations.POW:
-                            //TODO: Insert power method here
+                            result = MathClass.Pow(num1, num2);
                             break;
                         case operations.SQRT:
                             result = MathClass.Sqrt(num1, num2);
