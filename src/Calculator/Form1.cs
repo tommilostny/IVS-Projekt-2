@@ -107,7 +107,7 @@ namespace Calculator
                     switch (curr_operation)
                     {
                         case operations.ADD:
-                            //TODO: Insert add method here
+                            result = MathClass.Add(num1, num2);
                             break;
                         case operations.SUB:
                             result = MathClass.Subract(num1, num2);
