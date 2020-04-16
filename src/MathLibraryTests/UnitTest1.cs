@@ -101,6 +101,19 @@ namespace MathLibraryTests
             Assert.AreEqual(0.001, MathClass.Pow(10, -3)); //10^(-3) = 0.001
             Assert.AreEqual(0.25, MathClass.Pow(0.5, 2)); //0.5^2 = 0.25
         }
+
+        [TestMethod]
+        public void Add_Test()
+        {
+            Assert.AreEqual(4, MathClass.Add(2, 2)); //2+2 = 4
+            Assert.AreEqual(10, MathClass.Add(0, 10)); //0+10 = 10
+            Assert.AreEqual(20, MathClass.Add(20, 0)); //20+0 = 20
+            Assert.AreEqual(-3, MathClass.Add(5, -8)); //5-8 = -3
+            Assert.AreEqual(1, MathClass.Add(-6, 7)); //(-6)+7 = 1
+
+            for (double i = -15; i <= 15; i++)
+                Assert.AreEqual(0, MathClass.Add(-i, i));
+        }
     }
 
     [TestClass]
