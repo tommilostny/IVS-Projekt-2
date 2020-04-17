@@ -245,7 +245,7 @@ namespace Calculator
 		private void PowerOf2_button_Click(object sender, EventArgs e)
 		{
 			label1.Text = textBox1.Text + "² =";
-			textBox1.Text = MathClass.Pow(Convert.ToDouble(textBox1.Text), 2.0).ToString();
+			textBox1.Text = MathClass.Pow(Convert.ToDouble(textBox1.Text)).ToString();
 		}
 
 		private void ClearEntry_button_Click(object sender, EventArgs e)

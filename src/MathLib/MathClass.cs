@@ -13,7 +13,7 @@ namespace MathLib
 		/// </exception>
 		/// <param name="number">Number from which start calculating Prime number</param>
 		/// <returns>Calculated division.</returns>
-		public static long FirstPrimeNumberAfterNumber(double number)
+		public static double FirstPrimeNumberAfterNumber(double number)
 		{
 			number = Math.Floor(number);
 			if (number < 2) return 2; // 2 is first prime number
@@ -37,7 +37,7 @@ namespace MathLib
 					finded = true;
 				}
 			}
-			return Convert.ToInt64(number);
+			return number;
 		}
 
 		/// <summary>
