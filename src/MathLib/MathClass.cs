@@ -100,22 +100,30 @@ namespace MathLib
         /// </summary>
         /// <remarks>Autor: Daniel Ponížil (xponiz01)</remarks>
         /// <exception cref="System.ArgumentOutOfRangeException">
+        /// /// <exception cref="System.ArgumentException">
         /// <param name="num1">Index (degree) of the root.</param>
         /// <param name="num2">Root number.</param>
         /// <returns>Calculated radical.</returns>
         public static double Sqrt(double num1, double num2)
         {
-            if (num2 < 0)
-                throw new ArgumentOutOfRangeException();
-
             double result = 0;
+            if (num2 < 0 && num1 %2 == 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            if (num2 < 0 && num1 %2 != 0)
+            {
+                double tmp = Math.Abs(num2);
+                result = Math.Pow(tmp, 1.0 / num1);
+                return -result;
+            }
+
             if (num2 == 0)
                 return result;
 
-            if (num1 < 0)
+            if (num1 < 1)
                 throw new ArgumentException();
-            if (num1 == 0)
-                num1 = 2;
 
             result = Math.Pow(num2, 1.0 / num1);
             return result;
@@ -131,6 +139,30 @@ namespace MathLib
         public static double Mul(double num1, double num2)
         {
             return num1 * num2;
+        }
+
+        // <summary>
+        /// Function to calculate the exponentiotion.
+        /// </summary>
+        /// <remarks>Autor: Daniel Ponížil (xponiz01)</remarks>
+        /// <param name="num1">Number for exponentiation.</param>
+        /// <param name="num2">Potentiator.</param>
+        /// <returns>Calculated exponentiation.</returns>
+        public static double Pow(double num1, double num2)
+        {
+            return Math.Pow(num1, num2);
+        }
+
+        // <summary>
+        /// Function for adding two numbers.
+        /// </summary>
+        /// <remarks>Autor: Daniel Ponížil (xponiz01)</remarks>
+        /// <param name="num1">First number to add.</param>
+        /// <param name="num2">Second number to add.</param>
+        /// <returns>Calculated sum total.</returns>
+        public static double Add(double num1, double num2)
+        {
+            return num1 + num2;
         }
     }
 }
