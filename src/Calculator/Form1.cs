@@ -107,7 +107,7 @@ namespace Calculator
                     switch (curr_operation)
                     {
                         case operations.ADD:
-                            //TODO: Insert add method here
+                            result = MathClass.Add(num1, num2);
                             break;
                         case operations.SUB:
                             result = MathClass.Subract(num1, num2);
@@ -119,7 +119,7 @@ namespace Calculator
                             result = MathClass.Divide(num1, num2);
                             break;
                         case operations.POW:
-                            //TODO: Insert power method here
+                            result = MathClass.Pow(num1, num2);
                             break;
                         case operations.SQRT:
                             result = MathClass.Sqrt(num1, num2);
@@ -130,6 +130,14 @@ namespace Calculator
 
                     curr_operation = operations.NONE;
                     num1 = result;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Show_ErrorMessage("Zadejte kladné číslo nebo lichého odmocnitele");
+                }
+                catch (ArgumentException)
+                {
+                    Show_ErrorMessage("Odmocnitel musí být větší než 0");
                 }
                 catch (Exception exception)
                 {
@@ -237,7 +245,7 @@ namespace Calculator
         private void PowerOf2_button_Click(object sender, EventArgs e)
         {
             label1.Text = textBox1.Text + "² =";
-            //TODO: call second power for textbox text
+            textBox1.Text = MathClass.Pow(Convert.ToDouble(textBox1.Text), 2.0).ToString();
         }
 
         private void ClearEntry_button_Click(object sender, EventArgs e)

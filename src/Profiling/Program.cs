@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using MathLib;
 
 namespace Profiling
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             double s = 0; //result standard deviation
-            int N = 0; //N = count of numbers x
+            uint N = 0; //N = count of numbers x
             double xi_sum = 0;
 
             //loading input numbers from stdin
@@ -21,20 +19,20 @@ namespace Profiling
                 {
                     double number = Convert.ToDouble(line);
 
-                    s = s + Math.Pow(number, 2); // sum( xi^2 )     //TODO: replace with our add, power methods
+                    s = MathClass.Add(s, MathClass.Pow(number, 2)); // sum( xi^2 )
 
-                    N = N + 1; // TODO: replace with our add
+                    N = (uint)MathClass.Add(N, 1);
 
-                    xi_sum = xi_sum + number; // sum(xi)   // TODO: replace with our add
+                    xi_sum = MathClass.Add(xi_sum, number); // sum(xi)
                 }
-                catch (Exception e) { Console.WriteLine(e.Message); }
+                catch (Exception e) { Console.WriteLine(e.Message); return; }
             }
 
             try
             {
                 double xx = MathClass.Divide(xi_sum, N); // x' = 1/N * sum(xi) = sum(xi)/N
 
-                xx = Math.Pow(xx, 2); // x'^2     //TODO: replace with our power method
+                xx = MathClass.Pow(xx, 2); // x'^2
 
                 xx = MathClass.Mul(N, xx); // N * x'^2
 
