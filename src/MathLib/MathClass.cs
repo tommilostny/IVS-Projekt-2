@@ -24,7 +24,7 @@ namespace MathLib
 			{
 				findedFactor = true;
 				number += 2;
-				for (int i = 3; i <= Sqrt(number); i += 2)
+				for (int i = 3; i <= Sqrt(2,number); i += 2)
 				{   
 					if (number % i == 0)
 					{
@@ -104,7 +104,7 @@ namespace MathLib
 		/// <param name="num1">Index (degree) of the root.</param>
 		/// <param name="num2">Root number.</param>
 		/// <returns>Calculated radical.</returns>
-		public static double Sqrt(double num1, double num2 = 2)
+		public static double Sqrt(double num1, double num2)
 		{
 			double result = 0;
 			if (num2 < 0 && num1 % 2 == 0)
