@@ -24,8 +24,8 @@ namespace MathLib
 			{
 				findedFactor = true;
 				number += 2;
-				for (int i = 3; i <= Math.Sqrt(number); i += 2)
-				{    // ----TODO: Replace with our Sqrt function
+				for (int i = 3; i <= Sqrt(number); i += 2)
+				{   
 					if (number % i == 0)
 					{
 						findedFactor = false;
