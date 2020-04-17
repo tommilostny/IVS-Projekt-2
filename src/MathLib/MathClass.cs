@@ -104,7 +104,7 @@ namespace MathLib
 		/// <param name="num1">Index (degree) of the root.</param>
 		/// <param name="num2">Root number.</param>
 		/// <returns>Calculated radical.</returns>
-		public static double Sqrt(double num1, double num2)
+		public static double Sqrt(double num1, double num2 = 2)
 		{
 			double result = 0;
 			if (num2 < 0 && num1 % 2 == 0)
@@ -148,7 +148,7 @@ namespace MathLib
 		/// <param name="num1">Number for exponentiation.</param>
 		/// <param name="num2">Potentiator.</param>
 		/// <returns>Calculated exponentiation.</returns>
-		public static double Pow(double num1, double num2)
+		public static double Pow(double num1, double num2 = 2)
 		{
 			return Math.Pow(num1, num2);
 		}
