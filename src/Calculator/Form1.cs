@@ -2,20 +2,42 @@
 using System.Windows.Forms;
 using MathLib;
 
+/// <summary>
+/// Calculator Windows Forms app (.NET Framework 4.7.2)
+/// </summary>
 namespace Calculator
 {
 	/// <summary>
-	/// Calculator main Windows Forms window.
+	/// Main Windows Forms window for the calculator app.
 	/// </summary>
 	public partial class Form1 : Form
 	{
 		/// <summary>
 		/// Enum constants representing set operation.
 		/// </summary>
-		public enum operations { NONE, ADD = '+', SUB = '-', MUL = '*', DIV = '/', POW = '^', SQRT = '√' };
+		public enum operations
+		{ 
+			NONE, /*!< No operation is set */
+			ADD = '+', /*!< Addition */
+			SUB = '-', /*!< Subtraction */
+			MUL = '*', /*!< Multiplication */
+			DIV = '/', /*!< Division */
+			POW = '^', /*!< Power */
+			SQRT = '√' /*!< Square root */
+		};
 
+		/// <value>Global variable that represents currently set operation</value>
 		private operations curr_operation;
-		private double num1 = 0, num2 = 0;
+
+		/// <value>First number in performing calculations</value>
+		private double num1 = 0;
+
+		/// <value>Second number in performing calculations</value>
+		private double num2 = 0;
+
+		/// <value>State of global variable num1</value>
+		/// <remarks><c>true</c>: num1 is set and needs to be precalculated before setting new operation</remarks>
+		/// <remarks><c>false</c>: num1 is not set and is ready for loading new value</remarks>
 		private bool num1_is_set = false;
 
 		/// <summary>
@@ -306,7 +328,7 @@ namespace Calculator
 
 		/// <summary>
 		/// Second power button click event.
-		/// Calls math library Pow method with default degree (2).
+		/// Calls math library MathClass.Pow() method with default degree (2).
 		/// </summary>
 		private void PowerOf2_button_Click(object sender, EventArgs e)
 		{
@@ -323,7 +345,7 @@ namespace Calculator
 		}
 
 		/// <summary>
-		/// Resets calculation and prints error message.
+		/// Resets calculation (with Clear()) and prints error message.
 		/// Used in try-catch blocks to print exception errors.
 		/// </summary>
 		/// <param name="message">Error message</param>

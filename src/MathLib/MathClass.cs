@@ -1,5 +1,8 @@
 ﻿using System;
 
+/// <summary>
+/// Math Class Library (.NET Standard 2.0)
+/// </summary>
 namespace MathLib
 {
 	/// <summary>
