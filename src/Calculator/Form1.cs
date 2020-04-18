@@ -4,14 +4,23 @@ using MathLib;
 
 namespace Calculator
 {
+	/// <summary>
+	/// Calculator main Windows Forms window.
+	/// </summary>
 	public partial class Form1 : Form
 	{
-		enum operations { NONE, ADD = '+', SUB = '-', MUL = '*', DIV = '/', POW = '^', SQRT = '√' };
+		/// <summary>
+		/// Enum constants representing set operation.
+		/// </summary>
+		public enum operations { NONE, ADD = '+', SUB = '-', MUL = '*', DIV = '/', POW = '^', SQRT = '√' };
 
-		operations curr_operation;
-		double num1 = 0, num2 = 0;
-		bool num1_is_set = false;
+		private operations curr_operation;
+		private double num1 = 0, num2 = 0;
+		private bool num1_is_set = false;
 
+		/// <summary>
+		/// Calculator initial enter point.
+		/// </summary>
 		public Form1()
 		{
 			InitializeComponent();
@@ -21,6 +30,9 @@ namespace Calculator
 			textBox1.SelectionStart++;
 		}
 
+		/// <summary>
+		/// Numbers keypad button click event.
+		/// </summary>
 		private void buttonNumber_Click(object sender, EventArgs e)
 		{
 			if (label1.Text.Contains("="))
@@ -32,6 +44,10 @@ namespace Calculator
 			textBox1.Text += (sender as Button).Text;
 		}
 
+		/// <summary>
+		/// Backspace (eraser) button event.
+		/// Removes last character int textBox like backspace keyboard button.
+		/// </summary>
 		private void buttonBackspace_Click(object sender, EventArgs e)
 		{
 			if (label1.Text.Contains("="))
@@ -43,23 +59,39 @@ namespace Calculator
 				textBox1.Text = "0";
 		}
 
+		/// <summary>
+		/// +/- button event.
+		/// Changes sign of number in textBox.
+		/// </summary>
 		private void buttonNeg_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = (-1 * Convert.ToDouble(textBox1.Text)).ToString();
 		}
 
+		/// <summary>
+		/// Decimal point button click event.
+		/// Inserts decimal point into textBox.
+		/// </summary>
 		private void buttonPoint_Click(object sender, EventArgs e)
 		{
 			if (!textBox1.Text.Contains(","))
 				textBox1.Text += ",";
 		}
 
+		/// <summary>
+		/// Prime number button click event.
+		/// Calls math library method to calculate closest prime number after input number.
+		/// </summary>
 		private void buttonPrime_Click(object sender, EventArgs e)
 		{
 			label1.Text = textBox1.Text + ": nejbližší prvočíslo =";
 			textBox1.Text = MathClass.FirstPrimeNumberAfterNumber(Convert.ToDouble(textBox1.Text)).ToString();
 		}
 
+		/// <summary>
+		/// n! (factorial) button click event.
+		/// Calls math library method to calculate factorial of input number.
+		/// </summary>
 		private void buttonFaktorial_Click(object sender, EventArgs e)
 		{
 			try
@@ -81,6 +113,9 @@ namespace Calculator
 			}
 		}
 
+		/// <summary>
+		/// Clears and resets calculator.
+		/// </summary>
 		private void Clear()
 		{
 			textBox1.Text = "0";
@@ -90,11 +125,19 @@ namespace Calculator
 			curr_operation = operations.NONE;
 		}
 
+		/// <summary>
+		/// 'C' (clear) button click event used to call the Clear() method.
+		/// </summary>
 		private void buttonClear_Click(object sender, EventArgs e)
 		{
 			Clear();
 		}
 
+		/// <summary>
+		/// Calculates currently set operation.
+		/// Takes saved num1 and performs operation with num2 from textBox.
+		/// Result is printed into textBox.
+		/// </summary>
 		private void Calculate()
 		{
 			if (curr_operation != operations.NONE)
@@ -146,6 +189,10 @@ namespace Calculator
 			}
 		}
 
+		/// <summary>
+		/// Click event used by buttons that set operation which takes two number inputs.
+		/// Operation is set based on button.Text property.
+		/// </summary>
 		private void buttonTwoNumbersOperation_Click(object sender, EventArgs e)
 		{
 			if (textBox1.Text == string.Empty || textBox1.Text == "-")
@@ -174,6 +221,11 @@ namespace Calculator
 			textBox1.Text = "0";
 		}
 
+		/// <summary>
+		/// Event to check keyboard input into textBox.
+		/// Only numbers, sign and decimal point are allowed.
+		/// ENTER key is allowed to perform calculation after setting second number.
+		/// </summary>
 		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if (char.IsDigit(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '-' || char.IsControl(e.KeyChar)) // Allowing digits
@@ -214,11 +266,17 @@ namespace Calculator
 			}
 		}
 
+		/// <summary>
+		/// '=' button click event to perform calculation for set operation.
+		/// </summary>
 		private void buttonEquals_Click(object sender, EventArgs e)
 		{
 			Calculate();
 		}
 
+		/// <summary>
+		/// Used to check textBox text for leading zero.
+		/// </summary>
 		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
 			//Remove leading zero character
@@ -229,6 +287,10 @@ namespace Calculator
 			}
 		}
 
+		/// <summary>
+		/// Second square root button click event.
+		/// Calls math library Sqrt method with 2 as square root degree.
+		/// </summary>
 		private void buttonSqrt_Click(object sender, EventArgs e)
 		{
 			try
@@ -242,17 +304,29 @@ namespace Calculator
 			}
 		}
 
+		/// <summary>
+		/// Second power button click event.
+		/// Calls math library Pow method with default degree (2).
+		/// </summary>
 		private void PowerOf2_button_Click(object sender, EventArgs e)
 		{
 			label1.Text = textBox1.Text + "² =";
 			textBox1.Text = MathClass.Pow(Convert.ToDouble(textBox1.Text)).ToString();
 		}
 
+		/// <summary>
+		/// 'CE' button click event to clear entry.
+		/// </summary>
 		private void ClearEntry_button_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = "0";
 		}
 
+		/// <summary>
+		/// Resets calculation and prints error message.
+		/// Used in try-catch blocks to print exception errors.
+		/// </summary>
+		/// <param name="message">Error message</param>
 		private void Show_ErrorMessage(string message)
 		{
 			Clear();
