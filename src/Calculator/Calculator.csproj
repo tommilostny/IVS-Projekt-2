@@ -89,5 +89,8 @@
   <ItemGroup>
     <None Include="bin\Debug\img\icons8-clear-symbol-23.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\icons8-clear-symbol-23.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
