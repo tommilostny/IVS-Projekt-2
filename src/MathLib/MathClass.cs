@@ -2,6 +2,9 @@
 
 namespace MathLib
 {
+	/// <summary>
+	/// Math Library Class that is used to call calculation methods.
+	/// </summary>
 	public static class MathClass
 	{
 		/// <summary>
@@ -62,6 +65,9 @@ namespace MathLib
 		/// <remarks>Autor: Tomáš Milostný (xmilos02)</remarks>
 		/// <exception cref="System.ArgumentOutOfRangeException">
 		/// Thrown if number is out of range 0+
+		/// </exception>
+		/// <exception cref="System.OverflowException">
+		/// Thrown if input number is too large to calculate factorial from
 		/// </exception>
 		/// <param name="number">Number to calculate factorial from.</param>
 		/// <returns>Calculated factorial.</returns>
