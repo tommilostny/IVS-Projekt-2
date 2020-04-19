@@ -10,20 +10,20 @@ namespace Profiling
 			double s = 0; //result standard deviation
 			uint N = 0; //N = count of numbers x
 			double xi_sum = 0;
-
 			//loading input numbers from stdin
-			string line;
-			while ((line = Console.ReadLine()) != null)
+			string line = Console.In.ReadLine();
+			while (line != null && line != "")
 			{
 				try
 				{
 					double number = Convert.ToDouble(line);
-
 					s = MathClass.Add(s, MathClass.Pow(number, 2)); // sum( xi^2 )
 
 					N = (uint)MathClass.Add(N, 1);
 
 					xi_sum = MathClass.Add(xi_sum, number); // sum(xi)
+
+					line = Console.In.ReadLine();
 				}
 				catch (Exception e) { Console.WriteLine(e.Message); return; }
 			}
@@ -45,6 +45,7 @@ namespace Profiling
 				Console.WriteLine(s);
 			}
 			catch (Exception e) { Console.WriteLine(e.Message); }
+			return;
 		}
 	}
 }
