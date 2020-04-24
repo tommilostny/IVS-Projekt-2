@@ -33,12 +33,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_29CF140A0EFD573C67EF5767A00CA0A2"
-        "OwnerKey" = "8:_01640E6761564078848CD4569BA0A725"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2FA2740C6A0E6D0E62E37853946EF07D"
         "OwnerKey" = "8:_01640E6761564078848CD4569BA0A725"
         "MsmSig" = "8:_UNDEFINED"
@@ -51,8 +45,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6E98CA0BB3FC5605DBB54304A4E44AE3"
+        "OwnerKey" = "8:_01640E6761564078848CD4569BA0A725"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8EA10BF770101E13F76B6CE285CEE195"
         "OwnerKey" = "8:_F88D9A80E968BBF415B9342C3F6720DA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B292AC7635D2436E9A43FCCEDB0D3507"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,7 +70,7 @@
         "Entry"
         {
         "MsmKey" = "8:_F88D9A80E968BBF415B9342C3F6720DA"
-        "OwnerKey" = "8:_29CF140A0EFD573C67EF5767A00CA0A2"
+        "OwnerKey" = "8:_6E98CA0BB3FC5605DBB54304A4E44AE3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -172,6 +178,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -233,37 +247,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_29CF140A0EFD573C67EF5767A00CA0A2"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MathLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_29CF140A0EFD573C67EF5767A00CA0A2"
-                    {
-                    "Name" = "8:MathLib.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:MathLib.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2FA2740C6A0E6D0E62E37853946EF07D"
             {
             "AssemblyRegister" = "3:1"
@@ -291,7 +274,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -309,6 +292,37 @@
                     }
                 }
             "SourcePath" = "8:System.Diagnostics.Tracing.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6E98CA0BB3FC5605DBB54304A4E44AE3"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MathLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_6E98CA0BB3FC5605DBB54304A4E44AE3"
+                    {
+                    "Name" = "8:MathLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MathLib.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
@@ -353,8 +367,28 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B292AC7635D2436E9A43FCCEDB0D3507"
+            {
+            "SourcePath" = "8:..\\Calculator\\img\\calc_icon.ico"
+            "TargetName" = "8:calc_icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F88D9A80E968BBF415B9342C3F6720DA"
@@ -476,7 +510,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Calculator"
         "ProductCode" = "8:{3B906284-2E19-4CBF-B9E8-DE0EF178C44A}"
-        "PackageCode" = "8:{594A864B-2821-4A28-B636-06DD78C43BBD}"
+        "PackageCode" = "8:{E05A24C6-3B8A-464C-978D-14FF51D0086C}"
         "UpgradeCode" = "8:{E1BEE82E-0C7E-4B09-B907-810147B2F722}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -607,7 +641,7 @@
             "Target" = "8:_01640E6761564078848CD4569BA0A725"
             "Folder" = "8:_6EC0437088EB4986B05C2E4AA791809F"
             "WorkingFolder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
-            "Icon" = "8:"
+            "Icon" = "8:_B292AC7635D2436E9A43FCCEDB0D3507"
             "Feature" = "8:"
             }
         }
@@ -623,7 +657,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_4CCE3319A5D240199BACC0A32DABAAC6"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Dokončeno"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"
@@ -667,7 +701,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_913CCDEE50504E088A740244C0182CC1"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Průběh"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminProgressDlg.wid"
@@ -711,7 +745,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_5E778A3627EB4999A97E7AE3F3C3CC85"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Průběh"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
@@ -755,7 +789,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_4413AE25EDEF4A338A9BACC6EBC14E72"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Dokončeno"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFinishedDlg.wid"
@@ -786,7 +820,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_2BC75204C6AC4C55A1F2779B44BC33AA"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Vítejte"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminWelcomeDlg.wid"
@@ -834,7 +868,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_B7557F1AC73A47569ECC939FE9FF2C60"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Potvrzení instalace"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
@@ -856,7 +890,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_EFBDE24222D5405D83FD66DD6BE3A1FA"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Instalační složka"
+                    "DisplayName" = "8:Installation Folder"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFolderDlg.wid"
@@ -893,7 +927,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_12BC840A6D2A428CA996EB1779A9C2D7"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:Potvrzení instalace"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
@@ -915,7 +949,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_9A5AB8C00ED548CD918EF8498BC80F57"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:Instalační složka"
+                    "DisplayName" = "8:Installation Folder"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFolderDlg.wid"
@@ -950,7 +984,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_A67A3920250E47FB99E421604982BF21"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:Vítejte"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdWelcomeDlg.wid"
