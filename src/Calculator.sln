@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "..\..\..\..\..\..\Developing\Tests\Installer\Installer\Installer.vdproj", "{E03CBB8B-08DF-4940-9348-092B27D4547B}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup_Calculator", "Setup_Calculator\Setup_Calculator.vdproj", "{0DCC3E1B-BED4-4E75-8526-ADC81A2A7DEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,10 +58,10 @@ Global
 		{DEE3B0C7-187F-4FEE-B712-9DA993B1D3FD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DEE3B0C7-187F-4FEE-B712-9DA993B1D3FD}.Release|x64.ActiveCfg = Release|Any CPU
 		{DEE3B0C7-187F-4FEE-B712-9DA993B1D3FD}.Release|x64.Build.0 = Release|Any CPU
-		{E03CBB8B-08DF-4940-9348-092B27D4547B}.Debug|Any CPU.ActiveCfg = Debug
-		{E03CBB8B-08DF-4940-9348-092B27D4547B}.Debug|x64.ActiveCfg = Debug
-		{E03CBB8B-08DF-4940-9348-092B27D4547B}.Release|Any CPU.ActiveCfg = Release
-		{E03CBB8B-08DF-4940-9348-092B27D4547B}.Release|x64.ActiveCfg = Release
+		{0DCC3E1B-BED4-4E75-8526-ADC81A2A7DEA}.Debug|Any CPU.ActiveCfg = Debug
+		{0DCC3E1B-BED4-4E75-8526-ADC81A2A7DEA}.Debug|x64.ActiveCfg = Debug
+		{0DCC3E1B-BED4-4E75-8526-ADC81A2A7DEA}.Release|Any CPU.ActiveCfg = Release
+		{0DCC3E1B-BED4-4E75-8526-ADC81A2A7DEA}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
