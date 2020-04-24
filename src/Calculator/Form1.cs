@@ -46,10 +46,18 @@ namespace Calculator
 		public Form1()
 		{
 			InitializeComponent();
+			Focus_textBox1();
+		}
+
+		/// <summary>
+		/// Focus on the textbox input field.
+		/// </summary>
+		private void Focus_textBox1()
+		{
 			ActiveControl = textBox1;
 			textBox1.SelectAll();
 			textBox1.SelectionLength = 0;
-			textBox1.SelectionStart++;
+			textBox1.SelectionStart = textBox1.Text.Length;
 		}
 
 		/// <summary>
@@ -82,12 +90,33 @@ namespace Calculator
 		}
 
 		/// <summary>
+		/// Changes sign of number in textBox.
+		/// If textBox is empty, insert '-' sign (start of a negative number).
+		/// </summary>
+		private void textBox1_SignChange()
+		{
+			if (textBox1.Text == string.Empty || textBox1.Text == "-")
+			{
+				textBox1.Text = "-";
+				return;
+			}
+
+			double number = -(Convert.ToDouble(textBox1.Text));
+
+			if (num1_is_set)
+			{
+				Clear();
+			}
+			textBox1.Text = number.ToString();
+		}
+
+		/// <summary>
 		/// +/- button event.
 		/// Changes sign of number in textBox.
 		/// </summary>
 		private void buttonNeg_Click(object sender, EventArgs e)
 		{
-			textBox1.Text = (-1 * Convert.ToDouble(textBox1.Text)).ToString();
+			textBox1_SignChange();
 		}
 
 		/// <summary>
@@ -153,6 +182,7 @@ namespace Calculator
 		private void buttonClear_Click(object sender, EventArgs e)
 		{
 			Clear();
+			Focus_textBox1();
 		}
 
 		/// <summary>
@@ -212,10 +242,10 @@ namespace Calculator
 		}
 
 		/// <summary>
-		/// Click event used by buttons that set operation which takes two number inputs.
-		/// Operation is set based on button.Text property.
+		/// Sets current operation base on input string.
 		/// </summary>
-		private void buttonTwoNumbersOperation_Click(object sender, EventArgs e)
+		/// <param name="op_text">String operator text value</param>
+		private void Set_TwoNumbersOperation(string op_text)
 		{
 			if (textBox1.Text == string.Empty || textBox1.Text == "-")
 				textBox1.Text = "0";
@@ -230,7 +260,7 @@ namespace Calculator
 				Calculate();
 
 			//set a new operation based on sender button
-			switch ((sender as Button).Text)
+			switch (op_text)
 			{
 				case "-": curr_operation = operations.SUB; break;
 				case "+": curr_operation = operations.ADD; break;
@@ -241,6 +271,16 @@ namespace Calculator
 			}
 			label1.Text = num1.ToString() + ' ' + (char)curr_operation;
 			textBox1.Text = "0";
+			Focus_textBox1();
+		}
+
+		/// <summary>
+		/// Click event used by buttons that set operation which takes two number inputs.
+		/// Operation is set based on button.Text property.
+		/// </summary>
+		private void buttonTwoNumbersOperation_Click(object sender, EventArgs e)
+		{
+			Set_TwoNumbersOperation((sender as Button).Text);
 		}
 
 		/// <summary>
@@ -250,7 +290,7 @@ namespace Calculator
 		/// </summary>
 		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			if (char.IsDigit(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '-' || char.IsControl(e.KeyChar)) // Allowing digits
+			if (char.IsDigit(e.KeyChar) || e.KeyChar == ',' || char.IsControl(e.KeyChar)) // Allowing digits
 			{
 				//Unset calculation label and num1 after previous calculation
 				if (label1.Text.Contains("="))
@@ -258,21 +298,9 @@ namespace Calculator
 					label1.Text = string.Empty;
 					num1_is_set = false;
 				}
-
 				// Allowing decimal numbers
 				if (textBox1.Text.Contains(",") && e.KeyChar == ',')   // Max one ',' can be in number
 				{
-					e.Handled = true;
-				}
-				// Allowing negative numbers
-				if (e.KeyChar == '-')
-				{
-					// Max one '-' can be in number, Cannot be negative 0
-					if (!textBox1.Text.Contains("-"))
-					{
-						textBox1.Text = "-" + textBox1.Text;
-						textBox1.SelectionStart = textBox1.Text.Length; // Set cursor to end of textbox
-					}
 					e.Handled = true;
 				}
 				//ENTER key like "buttonEquals"
@@ -284,6 +312,26 @@ namespace Calculator
 			}
 			else
 			{
+				switch (e.KeyChar)
+				{
+					case '+': case '*': case '/':
+						//Nastavení operace podle textu klávesy
+						Set_TwoNumbersOperation(e.KeyChar.ToString());
+						break;
+					case '-':
+						//Kurzor je na začátku textBoxu, změna znaménka
+						if (textBox1.SelectionStart == 0)
+							textBox1_SignChange();
+
+						//Nastavení operace odčítání
+						else
+							Set_TwoNumbersOperation("-");
+						break;
+					case 'c':
+						Clear();
+						Focus_textBox1();
+						break;
+				}
 				e.Handled = true;
 			}
 		}
@@ -342,6 +390,7 @@ namespace Calculator
 		private void ClearEntry_button_Click(object sender, EventArgs e)
 		{
 			textBox1.Text = "0";
+			Focus_textBox1();
 		}
 
 		/// <summary>
