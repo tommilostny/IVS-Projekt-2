@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_29CF140A0EFD573C67EF5767A00CA0A2"
+        "OwnerKey" = "8:_01640E6761564078848CD4569BA0A725"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2FA2740C6A0E6D0E62E37853946EF07D"
         "OwnerKey" = "8:_01640E6761564078848CD4569BA0A725"
         "MsmSig" = "8:_UNDEFINED"
@@ -41,12 +47,6 @@
         {
         "MsmKey" = "8:_3F7EBF553C0C4199443E238FBFDEC767"
         "OwnerKey" = "8:_F88D9A80E968BBF415B9342C3F6720DA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6CFC37BA2344B0843432F6AFC02B8003"
-        "OwnerKey" = "8:_01640E6761564078848CD4569BA0A725"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,13 +64,25 @@
         "Entry"
         {
         "MsmKey" = "8:_F88D9A80E968BBF415B9342C3F6720DA"
-        "OwnerKey" = "8:_6CFC37BA2344B0843432F6AFC02B8003"
+        "OwnerKey" = "8:_29CF140A0EFD573C67EF5767A00CA0A2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_FEE005ACB3556AA4F885C0AC74722D10"
         "OwnerKey" = "8:_F88D9A80E968BBF415B9342C3F6720DA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_01640E6761564078848CD4569BA0A725"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_2FA2740C6A0E6D0E62E37853946EF07D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -103,18 +115,6 @@
         "OwnerKey" = "8:_3F7EBF553C0C4199443E238FBFDEC767"
         "MsmSig" = "8:_UNDEFINED"
         }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_01640E6761564078848CD4569BA0A725"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2FA2740C6A0E6D0E62E37853946EF07D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
     }
     "Configurations"
     {
@@ -133,6 +133,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -149,6 +165,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -194,7 +218,7 @@
             "SourcePath" = "8:System.IO.Compression.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_BA3A4B687C5E483781F3C43C4F344AE4"
+            "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -205,7 +229,38 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_29CF140A0EFD573C67EF5767A00CA0A2"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MathLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_29CF140A0EFD573C67EF5767A00CA0A2"
+                    {
+                    "Name" = "8:MathLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MathLib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -225,7 +280,7 @@
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_BA3A4B687C5E483781F3C43C4F344AE4"
+            "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -236,7 +291,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -256,7 +311,7 @@
             "SourcePath" = "8:System.Diagnostics.Tracing.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_BA3A4B687C5E483781F3C43C4F344AE4"
+            "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -267,38 +322,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6CFC37BA2344B0843432F6AFC02B8003"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MathLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_6CFC37BA2344B0843432F6AFC02B8003"
-                    {
-                    "Name" = "8:MathLib.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:MathLib.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_BA3A4B687C5E483781F3C43C4F344AE4"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -318,7 +342,7 @@
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_BA3A4B687C5E483781F3C43C4F344AE4"
+            "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -329,7 +353,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -349,7 +373,7 @@
             "SourcePath" = "8:netstandard.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_BA3A4B687C5E483781F3C43C4F344AE4"
+            "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -360,7 +384,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -380,7 +404,7 @@
             "SourcePath" = "8:System.IO.Compression.FileSystem.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_BA3A4B687C5E483781F3C43C4F344AE4"
+            "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -391,7 +415,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -425,7 +449,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_CB1DBA59C715412381BA03ED23A8E74D"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -433,17 +457,6 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_BA3A4B687C5E483781F3C43C4F344AE4"
-                    {
-                    "Name" = "8:Libraries"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_9BE13CF3F5F04E77A23CFEA16D051671"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
         }
@@ -461,30 +474,30 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Setup_Calculator"
+        "ProductName" = "8:Calculator"
         "ProductCode" = "8:{3B906284-2E19-4CBF-B9E8-DE0EF178C44A}"
-        "PackageCode" = "8:{D4E263D9-462D-46F3-81F4-3461E0AD013E}"
+        "PackageCode" = "8:{594A864B-2821-4A28-B636-06DD78C43BBD}"
         "UpgradeCode" = "8:{E1BEE82E-0C7E-4B09-B907-810147B2F722}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
-        "DetectNewerInstalledVersion" = "11:TRUE"
+        "RemovePreviousVersions" = "11:TRUE"
+        "DetectNewerInstalledVersion" = "11:FALSE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:Rivola"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Setup_Calculator"
+        "Title" = "8:Calculator"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Rivola"
-        "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
+        "Keywords" = "8:Calculator"
+        "ARPCOMMENTS" = "8:Calculator"
         "ARPURLINFOABOUT" = "8:"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:0"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
@@ -583,6 +596,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3CFA813B8A3B492DB1BB6458C2930E5A"
+            {
+            "Name" = "8:Calc"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_01640E6761564078848CD4569BA0A725"
+            "Folder" = "8:_6EC0437088EB4986B05C2E4AA791809F"
+            "WorkingFolder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -784,8 +811,8 @@
                             "Type" = "3:3"
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
-                            "Setting" = "3:1"
-                            "Value" = "8:#1202"
+                            "Setting" = "3:2"
+                            "Value" = "8:"
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -948,8 +975,8 @@
                             "Type" = "3:3"
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
-                            "Setting" = "3:1"
-                            "Value" = "8:#1202"
+                            "Setting" = "3:2"
+                            "Value" = "8:"
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -984,7 +1011,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_01640E6761564078848CD4569BA0A725"
             {
-            "SourcePath" = "8:..\\Calculator\\obj\\Release\\Calculator.exe"
+            "SourcePath" = "8:..\\Calculator\\obj\\Debug\\Calculator.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
