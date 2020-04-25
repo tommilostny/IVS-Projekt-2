@@ -57,12 +57,12 @@ namespace MathLibraryTests
 		[TestMethod]
 		public void Subtract_Test()
 		{
-			Assert.AreEqual(7, MathClass.Subract(10, 3)); //10-3=7
+			Assert.AreEqual(7, MathClass.Subtract(10, 3)); //10-3=7
 
 			for (int i = -23; i <= 23; i++)
-				Assert.AreEqual(0, MathClass.Subract(i, i));
+				Assert.AreEqual(0, MathClass.Subtract(i, i));
 
-			Assert.AreEqual(10, MathClass.Subract(5, -5)); //5 - -5 = 5 + 5 = 10 
+			Assert.AreEqual(10, MathClass.Subtract(5, -5)); //5 - -5 = 5 + 5 = 10 
 		}
 
 		[TestMethod]
@@ -83,23 +83,23 @@ namespace MathLibraryTests
 		[TestMethod]
 		public void Mul_Test()
 		{
-			Assert.AreEqual(8, MathClass.Mul(2, 4)); //2 * 4 = 8
-			Assert.AreEqual(-10, MathClass.Mul(2, -5)); //2 * (-5) = -10
-			Assert.AreEqual(-12, MathClass.Mul(-4, 3)); //-4 * 3 = -12
-			Assert.AreEqual(6, MathClass.Mul(-2, -3)); //-2 * (-3) = 6
+			Assert.AreEqual(8, MathClass.Multiply(2, 4)); //2 * 4 = 8
+			Assert.AreEqual(-10, MathClass.Multiply(2, -5)); //2 * (-5) = -10
+			Assert.AreEqual(-12, MathClass.Multiply(-4, 3)); //-4 * 3 = -12
+			Assert.AreEqual(6, MathClass.Multiply(-2, -3)); //-2 * (-3) = 6
 
 			for (double i = -15; i <= 15; i++)
-				Assert.AreEqual(Math.Pow(i, 2), MathClass.Mul(i, i));
+				Assert.AreEqual(Math.Pow(i, 2), MathClass.Multiply(i, i));
 		}
 
 		[TestMethod]
 		public void Pow_Test()
 		{
-			Assert.AreEqual(4, MathClass.Pow(2, 2)); //2^2 = 4
-			Assert.AreEqual(125, MathClass.Pow(5, 3)); //5^3 = 125
-			Assert.AreEqual(0.0625, MathClass.Pow(4, -2)); //-4^(-2) = 0.0625
-			Assert.AreEqual(0.001, MathClass.Pow(10, -3)); //10^(-3) = 0.001
-			Assert.AreEqual(0.25, MathClass.Pow(0.5, 2)); //0.5^2 = 0.25
+			Assert.AreEqual(4, MathClass.Power(2, 2)); //2^2 = 4
+			Assert.AreEqual(125, MathClass.Power(5, 3)); //5^3 = 125
+			Assert.AreEqual(0.0625, MathClass.Power(4, -2)); //-4^(-2) = 0.0625
+			Assert.AreEqual(0.001, MathClass.Power(10, -3)); //10^(-3) = 0.001
+			Assert.AreEqual(0.25, MathClass.Power(0.5, 2)); //0.5^2 = 0.25
 		}
 
 		[TestMethod]

@@ -205,16 +205,16 @@ namespace Calculator
 							result = MathClass.Add(num1, num2);
 							break;
 						case operations.SUB:
-							result = MathClass.Subract(num1, num2);
+							result = MathClass.Subtract(num1, num2);
 							break;
 						case operations.MUL:
-							result = MathClass.Mul(num1, num2);
+							result = MathClass.Multiply(num1, num2);
 							break;
 						case operations.DIV:
 							result = MathClass.Divide(num1, num2);
 							break;
 						case operations.POW:
-							result = MathClass.Pow(num1, num2);
+							result = MathClass.Power(num1, num2);
 							break;
 						case operations.SQRT:
 							result = MathClass.Sqrt(num1, num2);
@@ -381,7 +381,7 @@ namespace Calculator
 		private void PowerOf2_button_Click(object sender, EventArgs e)
 		{
 			label1.Text = textBox1.Text + "² =";
-			textBox1.Text = MathClass.Pow(Convert.ToDouble(textBox1.Text)).ToString();
+			textBox1.Text = MathClass.Power(Convert.ToDouble(textBox1.Text)).ToString();
 		}
 
 		/// <summary>

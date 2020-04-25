@@ -99,7 +99,7 @@ namespace MathLib
 		/// <param name="num1">Number to subtract from.</param>
 		/// <param name="num2">Subtracted number.</param>
 		/// <returns>Number 1 minus Number 2.</returns>
-		public static double Subract(double num1, double num2)
+		public static double Subtract(double num1, double num2)
 		{
 			return num1 - num2;
 		}
@@ -124,7 +124,7 @@ namespace MathLib
 			if (num2 < 0 && num1 % 2 != 0)
 			{
 				double tmp = Math.Abs(num2);
-				result = Math.Pow(tmp, 1.0 / num1);
+				result = Power(tmp, 1.0 / num1);
 				return -result;
 			}
 
@@ -134,7 +134,7 @@ namespace MathLib
 			if (num1 < 1)
 				throw new ArgumentException();
 
-			result = Math.Pow(num2, 1.0 / num1);
+			result = Power(num2, 1.0 / num1);
 			return result;
 		}
 
@@ -145,7 +145,7 @@ namespace MathLib
 		/// <param name="num1">First number for multiplication.</param>
 		/// <param name="num2">Second number for multiplication.</param>
 		/// <returns>Calculated multiplication.</returns>
-		public static double Mul(double num1, double num2)
+		public static double Multiply(double num1, double num2)
 		{
 			return num1 * num2;
 		}
@@ -157,7 +157,7 @@ namespace MathLib
 		/// <param name="num1">Number for exponentiation.</param>
 		/// <param name="num2">Potentiator.</param>
 		/// <returns>Calculated exponentiation.</returns>
-		public static double Pow(double num1, double num2 = 2)
+		public static double Power(double num1, double num2 = 2)
 		{
 			return Math.Pow(num1, num2);
 		}
