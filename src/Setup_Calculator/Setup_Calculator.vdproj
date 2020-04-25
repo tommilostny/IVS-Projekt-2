@@ -212,7 +212,7 @@
                     "_18A511141F2929F46DA89CE0F119B489"
                     {
                     "Name" = "8:System.IO.Compression.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:System.IO.Compression.dll"
@@ -223,13 +223,13 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -243,7 +243,7 @@
                     "_29CF140A0EFD573C67EF5767A00CA0A2"
                     {
                     "Name" = "8:MathLib.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:MathLib.dll"
@@ -254,13 +254,13 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -274,7 +274,7 @@
                     "_2FA2740C6A0E6D0E62E37853946EF07D"
                     {
                     "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
@@ -285,13 +285,13 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -305,7 +305,7 @@
                     "_3F7EBF553C0C4199443E238FBFDEC767"
                     {
                     "Name" = "8:System.Diagnostics.Tracing.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:System.Diagnostics.Tracing.dll"
@@ -316,13 +316,13 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -336,7 +336,7 @@
                     "_8EA10BF770101E13F76B6CE285CEE195"
                     {
                     "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
@@ -347,13 +347,13 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -367,7 +367,7 @@
                     "_F88D9A80E968BBF415B9342C3F6720DA"
                     {
                     "Name" = "8:netstandard.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:netstandard.dll"
@@ -378,13 +378,13 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -398,7 +398,7 @@
                     "_FEE005ACB3556AA4F885C0AC74722D10"
                     {
                     "Name" = "8:System.IO.Compression.FileSystem.dll"
-                    "Attributes" = "3:512"
+                    "Attributes" = "3:514"
                     }
                 }
             "SourcePath" = "8:System.IO.Compression.FileSystem.dll"
@@ -409,13 +409,13 @@
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -476,7 +476,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Calculator"
         "ProductCode" = "8:{3B906284-2E19-4CBF-B9E8-DE0EF178C44A}"
-        "PackageCode" = "8:{594A864B-2821-4A28-B636-06DD78C43BBD}"
+        "PackageCode" = "8:{4E63EB43-BF3D-48CB-B0DC-E60CDD983C7A}"
         "UpgradeCode" = "8:{E1BEE82E-0C7E-4B09-B907-810147B2F722}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
