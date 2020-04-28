@@ -38,3 +38,4 @@ profile:
 # vypíše nápovědu s popisem, co je potřeba udělat před spuštěním programu
 help:
 	@echo Before running the Calculator app you need to open "Calculator.sln" solution file in Visual Studio and build the project.
+	@echo Loading and building "Setup_Calculator" project requires "Microsoft Visual Studio Installer Projects" extension installed.
