@@ -98,12 +98,12 @@ namespace Calculator
 			if (textBox1.Text == string.Empty || textBox1.Text == "-")
 			{
 				textBox1.Text = "-";
+				textBox1.SelectionStart++;
 				return;
 			}
 
 			double number = -(Convert.ToDouble(textBox1.Text));
-
-			if (num1_is_set)
+			if (label1.Text.Contains("="))
 			{
 				Clear();
 			}
@@ -307,6 +307,7 @@ namespace Calculator
 				if (e.KeyChar == 13)
 				{
 					Calculate();
+					Focus_textBox1();
 					e.Handled = true;
 				}
 			}
@@ -315,15 +316,15 @@ namespace Calculator
 				switch (e.KeyChar)
 				{
 					case '+': case '*': case '/':
-						//Nastavení operace podle textu klávesy
+						//Set operation based on key char
 						Set_TwoNumbersOperation(e.KeyChar.ToString());
 						break;
 					case '-':
-						//Kurzor je na začátku textBoxu, změna znaménka
+						//Cursor is in front of a number in textBox - change sign
 						if (textBox1.SelectionStart == 0)
 							textBox1_SignChange();
 
-						//Nastavení operace odčítání
+						//Set subtraction as current operation
 						else
 							Set_TwoNumbersOperation("-");
 						break;
