@@ -1,0 +1,4 @@
+xrivol01 140 (GUI, testy, installer, prvočíslo, profiling)
+xmilos02 149 (GUI, makefile, testy, doxygen, mockup, faktoriál)
+xponiz01 110 (uživatelská příručka, testy, základní matematické operace)
+xpaulr01 1 (po 2 měsících urputného prošení se registroval na github)
