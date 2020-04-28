@@ -1,0 +1,6 @@
+V plánu jsme zapomněli zahrnout věci jako je doxygen, makefile, profiling kterou jsme následně rozdělili mezi členy týmu.
+
+
+xponiz01 - práce kterou měl na starosti xpaulr01 
+
+xpaulr01 - práci se neúčastnil, nekomunikoval a nespolupracoval.
