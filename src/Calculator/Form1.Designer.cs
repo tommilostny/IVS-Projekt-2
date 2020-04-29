@@ -351,6 +351,7 @@
             this.nápovědaToolStripMenuItem.Name = "nápovědaToolStripMenuItem";
             this.nápovědaToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
             this.nápovědaToolStripMenuItem.Text = "Nápověda";
+            this.nápovědaToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // textBox1
             // 

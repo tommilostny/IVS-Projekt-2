@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using MathLib;
+using System.IO;
+using System.Diagnostics;
 
 /// <summary>
 /// Calculator Windows Forms app (.NET Framework 4.7.2)
@@ -403,6 +405,20 @@ namespace Calculator
 		{
 			Clear();
 			label1.Text = message;
+		}
+
+		/// <summary>
+		/// Help menu button to show user documentation.
+		/// </summary>
+		private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			//Release mode (installed)
+			if (File.Exists("dokumentace.pdf"))
+				Process.Start("dokumentace.pdf");
+
+			//Debug mode (running from repo)
+			else
+				Process.Start(@"..\..\..\..\dokumentace.pdf");
 		}
 	}
 }

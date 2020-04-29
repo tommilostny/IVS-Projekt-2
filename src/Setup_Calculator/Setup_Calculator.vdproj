@@ -63,6 +63,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D644C659AB1A4F57B060DE5C09E16C9A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F88D9A80E968BBF415B9342C3F6720DA"
         "OwnerKey" = "8:_01640E6761564078848CD4569BA0A725"
         "MsmSig" = "8:_UNDEFINED"
@@ -391,6 +397,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D644C659AB1A4F57B060DE5C09E16C9A"
+            {
+            "SourcePath" = "8:..\\..\\dokumentace.pdf"
+            "TargetName" = "8:dokumentace.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_CB1DBA59C715412381BA03ED23A8E74D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F88D9A80E968BBF415B9342C3F6720DA"
             {
             "AssemblyRegister" = "3:1"
@@ -510,7 +536,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Calculator"
         "ProductCode" = "8:{3B906284-2E19-4CBF-B9E8-DE0EF178C44A}"
-        "PackageCode" = "8:{31113D33-7B30-484B-BFD9-F4F865858263}"
+        "PackageCode" = "8:{32F8C9E2-A024-4D88-8FA6-DE21D0116621}"
         "UpgradeCode" = "8:{E1BEE82E-0C7E-4B09-B907-810147B2F722}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
